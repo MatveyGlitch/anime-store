@@ -317,7 +317,7 @@ select {
   min-height: 610px;
   display: flex;
   align-items: center;
-  background: linear-gradient(90deg, rgba(20, 20, 25, 0.9) 0%, rgba(20, 20, 25, 0.68) 48%, rgba(20, 20, 25, 0.15) 100%), url("../img/common/hero-anime.jpg") center/cover no-repeat;
+  background: linear-gradient(90deg, rgba(20, 20, 25, 0.9) 0%, rgba(20, 20, 25, 0.68) 48%, rgba(20, 20, 25, 0.15) 100%), url("../img/common/hero-anime.webp") center/cover no-repeat;
 }
 
 .hero__inner {
@@ -945,7 +945,7 @@ select {
 .subscribe-section__background {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(245, 245, 245, 0.88), rgba(245, 245, 245, 0.88)), url("../img/common/subscribe-bg.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(245, 245, 245, 0.88), rgba(245, 245, 245, 0.88)), url("../img/common/subscribe-bg.webp") center/cover no-repeat;
 }
 
 .subscribe-section__inner {

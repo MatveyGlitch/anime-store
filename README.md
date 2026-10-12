@@ -113,7 +113,7 @@
 
 Сайт опубликован с помощью GitHub Pages и доступен по ссылке:
 
-[Открыть ANI STORE](ССЫЛКА_НА_САЙТ)
+[Открыть ANI STORE](https://matveyglitch.github.io/anime-store/)
 
 ---
 

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Корзина интернет-магазина аниме-атрибутики ANI STORE.">
+
+    <meta name="robots"
+          content="index, follow">
+
+    <meta name="author"
+          content="ANI STORE">
+
+    <title>Корзина — ANI STORE</title>
+
+
+    <meta name="description"
+          content="Корзина интернет-магазина ANI STORE.">
+
+    <title>ANI STORE — Корзина</title>
+
+    <link rel="stylesheet"
+          href="css/styles.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ===================================================== -->
+<!-- ШАПКА -->
+<!-- Общая для всех страниц -->
+<!-- ===================================================== -->
+
+<header class="site-header">
+
+    <div class="header-top">
+
+        <div class="container header-top__inner">
+
+
+            <!-- Логотип -->
+
+            <a class="logo"
+               href="index.html">
+
+                <span class="logo__main">ANI</span>
+                <span class="logo__accent">STORE</span>
+
+            </a>
+
+
+            <!-- Поиск -->
+
+            <form class="search"
+                  action="catalog.html"
+                  method="get">
+
+                <label class="visually-hidden"
+                       for="header-search">
+                    Поиск товаров
+                </label>
+
+
+                <select class="search__category"
+                        name="category"
+                        aria-label="Категория поиска">
+
+                    <option value="all">
+                        Все категории
+                    </option>
+
+                    <option value="figures">
+                        Фигурки
+                    </option>
+
+                    <option value="clothes">
+                        Одежда
+                    </option>
+
+                    <option value="manga">
+                        Манга
+                    </option>
+
+                </select>
+
+
+                <input class="search__input"
+                       type="search"
+                       id="header-search"
+                       name="search"
+                       placeholder="Поиск товаров..."
+                       minlength="2">
+
+
+                <button class="search__button"
+                        type="submit"
+                        aria-label="Найти">
+                    &#128269;
+                </button>
+
+            </form>
+
+
+            <!-- Корзина и аккаунт -->
+
+            <div class="header-actions">
+
+                <a class="cart-link"
+                   href="cart.html"
+                   aria-label="Корзина">
+
+                    <span class="cart-link__icon">
+                        &#128722;
+                    </span>
+
+                    <span class="cart-link__count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a class="account-button"
+                   href="checkout.html">
+                    Аккаунт
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- ГЛАВНОЕ МЕНЮ -->
+    <!-- ================================================= -->
+
+    <nav class="main-nav"
+         aria-label="Основное меню">
+
+        <div class="container">
+
+            <ul class="main-nav__list">
+
+                <li>
+                    <a href="index.html">
+                        Главная
+                    </a>
+                </li>
+
+                <li>
+                    <a href="catalog.html?category=figures">
+                        Фигурки
+                    </a>
+                </li>
+
+                <li>
+                    <a href="catalog.html?category=clothes">
+                        Одежда
+                    </a>
+                </li>
+
+                <li>
+                    <a href="catalog.html?category=manga">
+                        Манга
+                    </a>
+                </li>
+
+                <li>
+                    <a href="catalog.html">
+                        Каталог
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#sale">
+                        Акции
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ===================================================== -->
+<!-- ОСНОВНАЯ ЧАСТЬ -->
+<!-- ===================================================== -->
+
+<main>
+
+
+    <!-- ================================================= -->
+    <!-- ВЕРХ СТРАНИЦЫ -->
+    <!-- ================================================= -->
+
+    <section class="cart-page-header">
+
+        <div class="container cart-page-header__inner">
+
+            <h1>
+                Корзина
+            </h1>
+
+
+            <p class="breadcrumbs">
+
+                <a href="index.html">
+                    Главная
+                </a>
+
+                <span>/</span>
+
+                Корзина
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- КОРЗИНА -->
+    <!-- ================================================= -->
+
+    <section class="cart-page">
+
+        <div class="container">
+
+
+            <!-- ========================================= -->
+            <!-- ТАБЛИЦА ТОВАРОВ -->
+            <!-- ========================================= -->
+
+            <div class="cart-table-wrapper">
+
+                <table class="cart-table">
+
+                    <thead>
+
+                    <tr>
+
+                        <th class="cart-table__product">
+                            Товар
+                        </th>
+
+                        <th>
+                            Цена
+                        </th>
+
+                        <th>
+                            Количество
+                        </th>
+
+                        <th>
+                            Доставка
+                        </th>
+
+                        <th>
+                            Сумма
+                        </th>
+
+                        <th>
+                            Удалить
+                        </th>
+
+                    </tr>
+
+                    </thead>
+
+
+                    <tbody id="cart-items">
+
+                    <!--
+                    Товары из корзины
+                    создаёт JavaScript
+                    -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+
+            <!-- Если корзина пустая -->
+
+            <div class="cart-empty"
+                 id="cart-empty"
+                 hidden>
+
+                <h2>
+                    Корзина пуста
+                </h2>
+
+                <p>
+                    Добавьте товары из каталога,
+                    чтобы они появились здесь.
+                </p>
+
+                <a href="catalog.html"
+                   class="cart-empty__button">
+
+                    Перейти в каталог
+
+                </a>
+
+            </div>
+
+
+
+            <!-- ========================================= -->
+            <!-- КНОПКИ ПОД ТАБЛИЦЕЙ -->
+            <!-- ========================================= -->
+
+            <div class="cart-actions">
+
+                <button class="cart-action-button"
+                        id="cart-clear"
+                        type="button">
+
+                    Очистить корзину
+
+                </button>
+
+
+                <a class="cart-action-button"
+                   href="catalog.html">
+
+                    Продолжить покупки
+
+                </a>
+
+            </div>
+
+
+
+            <!-- ========================================= -->
+            <!-- НИЖНЯЯ ЧАСТЬ КОРЗИНЫ -->
+            <!-- ========================================= -->
+
+            <div class="cart-summary-grid">
+
+
+                <!-- ===================================== -->
+                <!-- ДОСТАВКА -->
+                <!-- ===================================== -->
+
+                <section class="cart-summary-block">
+
+                    <h2>
+                        Доставка
+                    </h2>
+
+
+                    <form class="shipping-form"
+                          action="#">
+
+                        <label class="visually-hidden"
+                               for="shipping-city">
+                            Город
+                        </label>
+
+                        <input id="shipping-city"
+                               type="text"
+                               placeholder="Город"
+                               required>
+
+
+                        <label class="visually-hidden"
+                               for="shipping-region">
+                            Регион
+                        </label>
+
+                        <input id="shipping-region"
+                               type="text"
+                               placeholder="Регион">
+
+
+                        <label class="visually-hidden"
+                               for="shipping-postcode">
+                            Почтовый индекс
+                        </label>
+
+                        <input id="shipping-postcode"
+                               type="text"
+                               placeholder="Почтовый индекс"
+                               pattern="[0-9]{5,6}">
+
+
+                        <button type="submit">
+                            Рассчитать доставку
+                        </button>
+
+                    </form>
+
+                </section>
+
+
+
+                <!-- ===================================== -->
+                <!-- ПРОМОКОД -->
+                <!-- ===================================== -->
+
+                <section class="cart-summary-block">
+
+                    <h2>
+                        Промокод
+                    </h2>
+
+                    <p>
+                        Введите промокод, если он у вас есть.
+                    </p>
+
+
+                    <form class="coupon-form"
+                          id="coupon-form">
+
+                        <label class="visually-hidden"
+                               for="coupon-code">
+                            Промокод
+                        </label>
+
+
+                        <input id="coupon-code"
+                               type="text"
+                               placeholder="Промокод">
+
+
+                        <button type="submit">
+                            Применить
+                        </button>
+
+                    </form>
+
+
+                    <p class="coupon-message"
+                       id="coupon-message">
+                    </p>
+
+                </section>
+
+
+
+                <!-- ===================================== -->
+                <!-- ИТОГО -->
+                <!-- ===================================== -->
+
+                <section class="cart-total">
+
+                    <div class="cart-total__row">
+
+                        <span>
+                            Стоимость товаров
+                        </span>
+
+                        <span id="cart-subtotal">
+                            0 ₽
+                        </span>
+
+                    </div>
+
+
+                    <div class="cart-total__row">
+
+                        <span>
+                            Скидка
+                        </span>
+
+                        <span id="cart-discount">
+                            0 ₽
+                        </span>
+
+                    </div>
+
+
+                    <div class="cart-total__row cart-total__row--grand">
+
+                        <strong>
+                            Итого
+                        </strong>
+
+                        <strong id="cart-total">
+                            0 ₽
+                        </strong>
+
+                    </div>
+
+
+                    <a class="cart-checkout-button"
+                       id="cart-checkout"
+                       href="checkout.html">
+
+                        Перейти к оформлению
+
+                    </a>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ===================================================== -->
+<!-- ОТЗЫВ + ПОДПИСКА -->
+<!-- Общий блок -->
+<!-- ===================================================== -->
+
+<section class="subscribe-section">
+
+    <div class="subscribe-section__background"></div>
+
+
+    <div class="container subscribe-section__inner">
+
+
+        <!-- Отзыв -->
+
+        <div class="testimonial">
+
+            <img class="testimonial__photo"
+                 src="img/common/customer.jpg"
+                 alt="Покупатель ANI STORE">
+
+
+            <div class="testimonial__content">
+
+                <blockquote>
+                    «Отличный магазин. Заказ пришёл быстро,
+                    товар был хорошо упакован и полностью
+                    соответствовал фотографиям на сайте».
+                </blockquote>
+
+
+                <p class="testimonial__author">
+
+                    <strong>
+                        Алексей
+                    </strong>
+
+                    <span>
+                        Москва
+                    </span>
+
+                </p>
+
+
+                <div class="testimonial__dots"
+                     aria-label="Переключение отзывов">
+
+                    <button type="button"
+                            class="testimonial__dot is-active"
+                            aria-label="Отзыв 1">
+                    </button>
+
+                    <button type="button"
+                            class="testimonial__dot"
+                            aria-label="Отзыв 2">
+                    </button>
+
+                    <button type="button"
+                            class="testimonial__dot"
+                            aria-label="Отзыв 3">
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Подписка -->
+
+        <div class="newsletter">
+
+            <h2>
+                Подписка
+            </h2>
+
+            <p>
+                Получайте информацию о новинках и акциях
+            </p>
+
+
+            <form class="newsletter__form"
+                  action="#"
+                  method="post">
+
+                <label class="visually-hidden"
+                       for="cart-newsletter-email">
+                    Email
+                </label>
+
+
+                <input type="email"
+                       id="cart-newsletter-email"
+                       name="email"
+                       placeholder="Введите ваш email"
+                       required>
+
+
+                <button type="submit">
+                    Подписаться
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- Общий для всех страниц -->
+<!-- ===================================================== -->
+
+<footer class="site-footer">
+
+
+    <div class="footer-main">
+
+        <div class="container footer-grid">
+
+
+            <!-- О магазине -->
+
+            <div class="footer-about">
+
+                <a class="logo footer-logo"
+                   href="index.html">
+
+                    <span class="logo__main">
+                        ANI
+                    </span>
+
+                    <span class="logo__accent">
+                        STORE
+                    </span>
+
+                </a>
+
+
+                <p>
+                    ANI STORE — интернет-магазин аниме-атрибутики.
+                    В каталоге представлены фигурки, одежда и манга
+                    по популярным аниме и манге.
+                </p>
+
+
+                <p>
+                    Мы собираем интересные товары
+                    для поклонников японской культуры.
+                </p>
+
+            </div>
+
+
+
+            <!-- Компания -->
+
+            <nav class="footer-column"
+                 aria-label="Компания">
+
+                <h2>
+                    Компания
+                </h2>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Главная
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalog.html">
+                            Каталог
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#sale">
+                            Акции
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="checkout.html">
+                            Аккаунт
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+
+            <!-- Информация -->
+
+            <nav class="footer-column"
+                 aria-label="Информация">
+
+                <h2>
+                    Информация
+                </h2>
+
+                <ul>
+
+                    <li>
+                        <a href="#">
+                            Доставка
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Оплата
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Возврат
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Контакты
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+
+            <!-- Категории -->
+
+            <nav class="footer-column"
+                 aria-label="Категории">
+
+                <h2>
+                    Категории
+                </h2>
+
+                <ul>
+
+                    <li>
+                        <a href="catalog.html?category=figures">
+                            Фигурки
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalog.html?category=clothes">
+                            Одежда
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalog.html?category=manga">
+                            Манга
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalog.html">
+                            Все товары
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Нижняя часть Footer -->
+
+    <div class="footer-bottom">
+
+        <div class="container footer-bottom__inner">
+
+            <p>
+                © 2026 ANI STORE.
+                Учебный проект по Web-программированию.
+            </p>
+
+
+            <div class="footer-socials">
+
+                <a href="#"
+                   aria-label="VK">
+                    <i class="fa-brands fa-vk"></i>
+                </a>
+
+                <a href="#"
+                   aria-label="Telegram">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+
+                <a href="#"
+                   aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ===================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ===================================================== -->
+
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,4708 @@
+// ======================================================
+// ======================================================
+// 0. ПЕРЕМЕННЫЕ
+// Используются на всех страницах сайта
+// ======================================================
+// ======================================================
+
+$color-dark: #222222;
+$color-text: #222222;
+$color-muted: #777777;
+
+$color-white: #f2edef;
+$color-light: #f7f7f7;
+$color-border: #e4e4e4;
+
+$color-accent: #f16d7f;
+$color-accent-dark: #d9576a;
+
+$container-width: 1140px;
+
+
+
+// ======================================================
+// ======================================================
+// 1. ОБЩИЕ СТИЛИ
+// Используются на всех страницах сайта
+// ======================================================
+// ======================================================
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background-color: $color-white;
+  color: $color-text;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.container {
+  width: min(92%, $container-width);
+
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+
+  border: 0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+
+// ======================================================
+// ======================================================
+// 2. ШАПКА САЙТА
+// ОБЩАЯ ДЛЯ ВСЕХ СТРАНИЦ
+//
+// index.html
+// catalog.html
+// product.html
+// cart.html
+// checkout.html
+// ======================================================
+// ======================================================
+
+
+// ======================================================
+// Верхняя часть шапки
+// ======================================================
+
+.header-top {
+  background-color: $color-white;
+
+  border-bottom: 1px solid $color-border;
+}
+
+.header-top__inner {
+  display: flex;
+  align-items: center;
+
+  min-height: 100px;
+}
+
+
+// ======================================================
+// Логотип
+// ======================================================
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  margin-right: 35px;
+
+  font-size: 27px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.logo__main {
+  color: $color-dark;
+}
+
+.logo__accent {
+  margin-left: 5px;
+
+  color: $color-accent;
+}
+
+
+// ======================================================
+// Поиск в шапке
+// ======================================================
+
+.search {
+  display: flex;
+
+  width: 520px;
+  height: 42px;
+
+  margin-right: auto;
+}
+
+.search__category {
+  padding: 0 12px;
+
+  background-color: $color-light;
+
+  border: 1px solid $color-border;
+  border-radius: 4px 0 0 4px;
+
+  cursor: pointer;
+}
+
+.search__input {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 0 14px;
+
+  border: 1px solid $color-border;
+  border-left: 0;
+
+  outline: none;
+
+  transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+
+  &:focus {
+    border-color: $color-accent;
+
+    box-shadow: inset 0 0 0 1px $color-accent;
+  }
+}
+
+.search__button {
+  width: 48px;
+
+  background-color: $color-white;
+
+  border: 1px solid $color-border;
+  border-left: 0;
+
+  border-radius: 0 4px 4px 0;
+
+  cursor: pointer;
+
+  transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+
+  &:hover {
+    background-color: $color-accent;
+    color: $color-white;
+  }
+}
+
+
+// ======================================================
+// Корзина и аккаунт
+// ======================================================
+
+.header-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+
+  margin-left: 35px;
+}
+
+.cart-link {
+  position: relative;
+
+  display: block;
+
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: rotate(360deg);
+  }
+}
+
+.cart-link__icon {
+  font-size: 28px;
+}
+
+.cart-link__count {
+  position: absolute;
+
+  top: -8px;
+  right: -10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+
+  background-color: $color-accent;
+  color: $color-white;
+
+  border-radius: 50%;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.account-button {
+  padding: 10px 20px;
+
+  background-color: $color-accent;
+  color: $color-white;
+
+  border-radius: 3px;
+
+  transition:
+          background-color 0.3s ease,
+          transform 0.3s ease;
+
+  &:hover {
+    background-color: $color-accent-dark;
+
+    transform: translateY(-2px);
+  }
+}
+
+
+// ======================================================
+// Главное меню
+// ======================================================
+
+.main-nav {
+  background-color: $color-white;
+
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.main-nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 35px;
+
+  margin: 0;
+  padding: 18px 0;
+
+  list-style: none;
+
+  > li {
+    position: relative;
+  }
+
+  a {
+    position: relative;
+
+    display: block;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    transition: color 0.25s ease;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+      bottom: -8px;
+
+      width: 0;
+      height: 2px;
+
+      background-color: $color-accent;
+
+      transform: translateX(-50%);
+
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: $color-accent;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+// ======================================================
+// ======================================================
+// 3. ОБЩИЕ КОМПОНЕНТЫ ТОВАРОВ
+//
+// Используются и на ГЛАВНОЙ, и в КАТАЛОГЕ
+// ======================================================
+// ======================================================
+
+
+// ======================================================
+// Карточка товара
+// ======================================================
+
+.product-card {
+  background-color: $color-white;
+
+  transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+  }
+}
+
+
+// ======================================================
+// Изображение товара
+// ======================================================
+
+.product-card__image {
+  position: relative;
+
+  height: 300px;
+
+  overflow: hidden;
+
+  background-color: #f3f3f3;
+
+  > a {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+            transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+}
+
+.product-card:hover .product-card__image img {
+  transform: scale(1.05);
+}
+
+
+// ======================================================
+// Затемнение фотографии при наведении
+// ======================================================
+
+.product-card__overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(30, 30, 30, 0.72);
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-card__overlay {
+  opacity: 1;
+}
+
+
+// ======================================================
+// Кнопка "В корзину"
+// ======================================================
+
+.product-card__cart {
+  padding: 10px 16px;
+
+  background-color: transparent;
+  color: $color-white;
+
+  border: 1px solid $color-white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s ease;
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-dark;
+
+    transform: scale(1.05);
+  }
+}
+
+
+// ======================================================
+// Текст карточки товара
+// ======================================================
+
+.product-card__content {
+  padding: 14px 12px 20px;
+}
+
+.product-card__category {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: $color-muted;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+}
+
+.product-card__title {
+  min-height: 42px;
+
+  margin: 0 0 10px;
+
+  font-size: 15px;
+  line-height: 1.4;
+
+  a {
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+.product-card__price {
+  color: $color-accent;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+
+
+// ======================================================
+// ======================================================
+// 4. ГЛАВНАЯ СТРАНИЦА
+// index.html
+// ======================================================
+// ======================================================
+
+
+// ======================================================
+// 4.1 Главный Hero-баннер
+// ======================================================
+
+.hero {
+  min-height: 610px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+          linear-gradient(
+                  90deg,
+                  rgba(20, 20, 25, 0.90) 0%,
+                  rgba(20, 20, 25, 0.68) 48%,
+                  rgba(20, 20, 25, 0.15) 100%
+          ),
+          url("../img/common/hero-anime.jpg") center / cover no-repeat;
+}
+
+.hero__inner {
+  display: flex;
+  align-items: center;
+
+  min-height: 610px;
+}
+
+.hero__content {
+  max-width: 620px;
+
+  color: $color-white;
+}
+
+.hero__subtitle {
+  margin: 0 0 10px;
+
+  color: $color-accent;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero__title {
+  margin: 0 0 20px;
+
+  font-size: 72px;
+  line-height: 1;
+
+  letter-spacing: 2px;
+
+  span {
+    color: $color-accent;
+  }
+}
+
+.hero__description {
+  max-width: 520px;
+
+  margin: 0 0 30px;
+
+  color: #eeeeee;
+
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.hero__button {
+  display: inline-block;
+
+  padding: 14px 26px;
+
+  background-color: $color-accent;
+  color: $color-white;
+
+  border-radius: 3px;
+
+  font-weight: 700;
+
+  transition:
+          background-color 0.3s ease,
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+
+  &:hover {
+    background-color: $color-accent-dark;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
+  }
+}
+
+
+// ======================================================
+// 4.2 Общие заголовки секций на главной
+// ======================================================
+
+.section-title {
+  margin: 0 0 8px;
+
+  font-size: 32px;
+
+  text-align: center;
+}
+
+.section-subtitle {
+  margin: 0 0 40px;
+
+  color: $color-muted;
+
+  text-align: center;
+}
+
+
+// ======================================================
+// 4.3 Рекламная мозаика категорий
+// Фигурки / Манга / Одежда / Новинки
+// ======================================================
+
+.promo-categories {
+  padding: 45px 0;
+
+  background-color: $color-white;
+}
+
+.promo-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+.promo-column {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.promo-card {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background-color: #eeeeee;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+            transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
+            filter 0.4s ease;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.12),
+                    rgba(0, 0, 0, 0)
+            );
+
+    pointer-events: none;
+  }
+
+  &:hover img {
+    transform: scale(1.06);
+  }
+}
+
+.promo-card--large {
+  height: 420px;
+}
+
+.promo-card--small {
+  height: 200px;
+}
+
+.promo-card__label {
+  position: absolute;
+
+  top: 20px;
+  left: 0;
+  z-index: 2;
+
+  padding: 10px 16px;
+
+  background-color: rgba(255, 255, 255, 0.94);
+
+  span,
+  strong {
+    display: block;
+  }
+
+  span {
+    color: $color-dark;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+  }
+
+  strong {
+    margin-top: 2px;
+
+    color: $color-accent;
+
+    font-size: 21px;
+    line-height: 1.1;
+
+    text-transform: uppercase;
+  }
+}
+
+
+// ======================================================
+// 4.4 Популярные товары / Featured Items
+// ======================================================
+
+.featured-products {
+  padding: 70px 0 60px;
+
+  background-color: $color-white;
+}
+
+.products-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 28px 22px;
+}
+
+.featured-products__footer {
+  margin-top: 45px;
+
+  text-align: center;
+}
+
+.catalog-button {
+  display: inline-block;
+
+  padding: 13px 28px;
+
+  color: $color-accent;
+
+  border: 1px solid $color-accent;
+  border-radius: 3px;
+
+  font-weight: 700;
+
+  transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s ease;
+
+  &:hover {
+    background-color: $color-accent;
+    color: $color-white;
+
+    transform: translateY(-2px);
+  }
+}
+
+
+// ======================================================
+// 4.5 Акция + преимущества магазина
+// Только Главная страница
+// ======================================================
+
+.offer-section {
+  padding: 80px 0;
+
+  background-color: $color-white;
+}
+
+.offer {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  min-height: 480px;
+  height: auto;
+
+  overflow: hidden;
+
+  background-color: #222224;
+}
+
+.offer__banner {
+  position: relative;
+
+  overflow: hidden;
+
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: 90% center;
+
+    transition:
+            transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+}
+
+.offer__text {
+  position: absolute;
+
+  top: 90px;
+  left: 40px;
+  z-index: 2;
+
+  color: $color-white;
+
+  p {
+    margin: 0;
+
+    font-size: 48px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+  }
+
+  strong {
+    color: $color-white;
+  }
+
+  span {
+    color: $color-accent;
+  }
+
+  h2 {
+    margin: 4px 0 0;
+
+    font-size: 31px;
+    font-weight: 400;
+
+    text-transform: uppercase;
+  }
+}
+
+.offer__benefits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 45px;
+
+  padding: 40px 35px;
+
+  background-color: #222224;
+  color: $color-white;
+}
+
+.benefit {
+  display: grid;
+
+  grid-template-columns: 60px 1fr;
+
+  gap: 22px;
+
+  align-items: start;
+
+  h3 {
+    margin: 0 0 12px;
+
+    font-size: 21px;
+  }
+
+  p {
+    margin: 0;
+
+    color: #cccccc;
+
+    font-size: 16px;
+    line-height: 1.65;
+  }
+}
+
+.benefit__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+
+  color: $color-accent;
+
+  font-size: 31px;
+  font-weight: 700;
+
+  transition:
+          transform 0.4s ease-in-out,
+          color 0.3s ease;
+
+  .benefit:hover & {
+    color: $color-white;
+
+    transform: rotate(360deg);
+  }
+}
+
+
+
+// ======================================================
+// ======================================================
+// 5. СТРАНИЦА КАТАЛОГА
+// catalog.html
+// ======================================================
+// ======================================================
+
+
+// ======================================================
+// 5.1 Верх каталога
+// "Новые поступления" + хлебные крошки
+// ======================================================
+
+.catalog-header {
+  padding: 28px 0;
+
+  background-color: #f8f3f4;
+}
+
+.catalog-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.catalog-header h1 {
+  margin: 0;
+
+  color: $color-accent;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin: 0;
+
+  color: $color-muted;
+
+  font-size: 13px;
+
+  text-transform: uppercase;
+
+  a {
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  span {
+    color: #aaaaaa;
+  }
+}
+
+
+// ======================================================
+// 5.2 Основная область каталога
+// ======================================================
+
+.catalog {
+  padding: 55px 0 70px;
+}
+
+.catalog__layout {
+  display: grid;
+
+  grid-template-columns: 220px 1fr;
+
+  gap: 45px;
+
+  align-items: start;
+}
+
+
+// ======================================================
+// 5.3 Левая панель каталога
+// Категории / Франшиза / Производитель
+// ======================================================
+
+.catalog-sidebar {
+  min-width: 0;
+}
+
+
+// ======================================================
+// Категории каталога
+// ======================================================
+
+.catalog-filter {
+  width: 100%;
+
+  padding: 6px 12px;
+
+  background: transparent;
+  color: $color-muted;
+
+  border: 0;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+          color 0.25s ease,
+          padding-left 0.25s ease;
+
+  &:hover {
+    color: $color-accent;
+
+    padding-left: 16px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(241, 109, 127, 0.35);
+    outline-offset: 2px;
+  }
+
+  &.is-active {
+    color: $color-accent;
+
+    font-weight: 700;
+  }
+}
+
+
+// ======================================================
+// Франшиза / Производитель
+// ======================================================
+
+.sidebar-dropdown {
+  margin-top: 12px;
+
+  border-top: 1px solid $color-border;
+
+  summary {
+    position: relative;
+
+    padding: 13px 28px 13px 10px;
+
+    color: $color-text;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    list-style: none;
+
+    border-left: 4px solid $color-accent;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: "+";
+
+      position: absolute;
+
+      right: 8px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: $color-muted;
+
+      font-size: 16px;
+    }
+  }
+
+  &[open] summary::after {
+    content: "−";
+  }
+}
+
+.sidebar-dropdown__content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  padding: 8px 10px 15px;
+
+  label {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: $color-muted;
+
+    font-size: 13px;
+
+    cursor: pointer;
+  }
+
+  input {
+    accent-color: $color-accent;
+  }
+}
+
+
+// ======================================================
+// 5.4 Верхние фильтры каталога
+//
+// Популярное сейчас
+// Размер
+// Цена
+// ======================================================
+
+.catalog-top-filters {
+  display: grid;
+
+  grid-template-columns: 1.3fr 1fr 1.2fr;
+
+  gap: 40px;
+
+  margin-bottom: 30px;
+}
+
+.catalog-filter-group {
+
+  h3 {
+    margin: 0 0 15px;
+
+    color: $color-text;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+  }
+}
+
+
+// ======================================================
+// Популярное сейчас
+// ======================================================
+
+.trending-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 4px 0;
+
+  button {
+    padding: 0 9px;
+
+    background: transparent;
+    color: $color-muted;
+
+    border: 0;
+    border-right: 1px solid $color-border;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: color 0.25s ease;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+
+// ======================================================
+// Размеры
+// ======================================================
+
+.size-options {
+  display: grid;
+
+  grid-template-columns: repeat(3, auto);
+
+  gap: 8px 12px;
+
+  justify-content: start;
+
+  label {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color: $color-muted;
+
+    font-size: 12px;
+
+    cursor: pointer;
+  }
+
+  input {
+    accent-color: $color-accent;
+  }
+}
+
+
+// ======================================================
+// Цена
+// ======================================================
+
+.price-range {
+  width: 100%;
+
+  accent-color: $color-accent;
+
+  cursor: pointer;
+}
+
+.price-range__values {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 6px;
+
+  color: $color-muted;
+
+  font-size: 11px;
+}
+
+
+// ======================================================
+// 5.5 Панель сортировки
+// ======================================================
+
+.catalog-toolbar {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 35px;
+  padding: 10px;
+
+  background-color: #f3f3f3;
+}
+
+.catalog-sort,
+.catalog-show {
+  display: flex;
+  align-items: center;
+
+  span {
+    padding: 7px 10px;
+
+    background-color: $color-white;
+
+    color: $color-muted;
+
+    font-size: 12px;
+
+    border: 1px solid $color-border;
+    border-right: 0;
+  }
+
+  select {
+    padding: 7px 28px 7px 10px;
+
+    background-color: $color-white;
+
+    color: $color-muted;
+
+    border: 1px solid $color-border;
+
+    font-size: 12px;
+
+    cursor: pointer;
+  }
+}
+
+
+// ======================================================
+// 5.6 Сетка товаров каталога
+// 3 товара в ряд
+// ======================================================
+
+.catalog-products {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+
+// ======================================================
+// Сообщение "ничего не найдено"
+// ======================================================
+
+.catalog-empty {
+  padding: 50px 20px;
+
+  background-color: $color-light;
+
+  color: $color-muted;
+
+  text-align: center;
+
+  border-radius: 5px;
+}
+
+// ======================================================
+// 5.7 Пагинация и кнопка "Показать все"
+// ======================================================
+
+.catalog-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-top: 35px;
+}
+
+
+// ======================================================
+// Пагинация
+// ======================================================
+
+.pagination {
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+
+  padding: 5px 8px;
+
+  border: 1px solid $color-border;
+  border-radius: 3px;
+}
+
+.pagination__page,
+.pagination__arrow {
+  min-width: 28px;
+  height: 28px;
+
+  padding: 0 6px;
+
+  background-color: transparent;
+  color: $color-muted;
+
+  border: 0;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition:
+          color 0.25s ease,
+          background-color 0.25s ease;
+
+  &:hover {
+    color: $color-accent;
+  }
+
+  &.is-active {
+    color: $color-accent;
+    font-weight: 700;
+  }
+}
+
+.pagination__dots {
+  padding: 0 4px;
+
+  color: $color-muted;
+
+  font-size: 12px;
+}
+
+
+// ======================================================
+// Кнопка "Показать все"
+// ======================================================
+
+.catalog-view-all {
+  padding: 10px 30px;
+
+  background-color: $color-white;
+  color: $color-accent;
+
+  border: 1px solid $color-accent;
+
+  cursor: pointer;
+
+  transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s ease;
+
+  &:hover {
+    background-color: $color-accent;
+    color: $color-white;
+
+    transform: translateY(-2px);
+  }
+}
+
+// ======================================================
+// 5.8 Преимущества магазина
+// Только страница Каталога
+// ======================================================
+
+.catalog-benefits {
+  padding: 55px 0;
+
+  background-color: #222224;
+  color: $color-white;
+}
+
+.catalog-benefits__grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 60px;
+}
+
+.catalog-benefit {
+  text-align: center;
+
+  h2 {
+    margin: 14px 0 10px;
+
+    font-size: 18px;
+  }
+
+  p {
+    max-width: 280px;
+
+    margin: 0 auto;
+
+    color: #cccccc;
+
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
+.catalog-benefit__icon {
+  color: $color-accent;
+
+  font-size: 32px;
+
+  transition:
+          transform 0.4s ease,
+          color 0.3s ease;
+
+  .catalog-benefit:hover & {
+    color: $color-white;
+
+    transform: rotate(360deg);
+  }
+}
+
+
+// ======================================================
+// ======================================================
+// 6. ОТЗЫВ + ПОДПИСКА
+//
+// ОБЩИЙ БЛОК
+// Используется на Главной и дальше будет использоваться
+// на Каталоге и других страницах по макету
+// ======================================================
+// ======================================================
+
+.subscribe-section {
+  position: relative;
+
+  min-height: 360px;
+
+  overflow: hidden;
+
+  border-bottom: 1px solid $color-border;
+}
+
+.subscribe-section__background {
+  position: absolute;
+  inset: 0;
+
+  background:
+          linear-gradient(
+                  rgba(245, 245, 245, 0.88),
+                  rgba(245, 245, 245, 0.88)
+          ),
+          url("../img/common/subscribe-bg.jpg") center / cover no-repeat;
+}
+
+.subscribe-section__inner {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  min-height: 360px;
+}
+
+
+// ======================================================
+// Отзыв
+// ======================================================
+
+.testimonial {
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+
+  padding-right: 55px;
+
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.testimonial__photo {
+  width: 95px;
+  height: 95px;
+
+  flex-shrink: 0;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.testimonial__content {
+  max-width: 430px;
+
+  blockquote {
+    margin: 0 0 18px;
+
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.7;
+  }
+}
+
+.testimonial__author {
+  margin: 0 0 20px;
+
+  strong,
+  span {
+    display: block;
+  }
+
+  strong {
+    color: $color-accent;
+
+    font-size: 16px;
+  }
+
+  span {
+    color: $color-muted;
+
+    font-size: 13px;
+  }
+}
+
+
+// ======================================================
+// Переключатели отзывов
+// ======================================================
+
+.testimonial__dots {
+  display: flex;
+
+  gap: 10px;
+}
+
+.testimonial__dot {
+  width: 38px;
+  height: 4px;
+
+  padding: 0;
+
+  background-color: #cccccc;
+
+  border: 0;
+
+  cursor: pointer;
+
+  transition:
+          background-color 0.3s ease,
+          transform 0.3s ease;
+
+  &:hover,
+  &.is-active {
+    background-color: $color-accent;
+  }
+
+  &:hover {
+    transform: scaleX(1.12);
+  }
+}
+
+
+// ======================================================
+// Подписка
+// ======================================================
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding-left: 55px;
+
+  text-align: center;
+
+  h2 {
+    margin: 0 0 4px;
+
+    font-size: 28px;
+    font-weight: 400;
+
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0 0 28px;
+
+    font-size: 14px;
+
+    text-transform: uppercase;
+  }
+}
+
+.newsletter__form {
+  display: flex;
+
+  width: 100%;
+  max-width: 420px;
+
+  input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 14px 20px;
+
+    background-color: #e1e1e1;
+
+    border: 1px solid transparent;
+    border-radius: 25px 0 0 25px;
+
+    outline: none;
+
+    transition:
+            border-color 0.3s ease,
+            background-color 0.3s ease;
+
+    &:focus {
+      background-color: $color-white;
+
+      border-color: $color-accent;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-color: #d9534f;
+    }
+
+    &:valid:not(:placeholder-shown) {
+      border-color: #4caf50;
+    }
+  }
+
+  button {
+    padding: 14px 22px;
+
+    background-color: $color-accent;
+    color: $color-white;
+
+    border: 0;
+    border-radius: 0 25px 25px 0;
+
+    cursor: pointer;
+
+    transition:
+            background-color 0.3s ease,
+            transform 0.3s ease;
+
+    &:hover {
+      background-color: $color-accent-dark;
+
+      transform: translateX(2px);
+    }
+  }
+}
+
+
+
+// ======================================================
+// ======================================================
+// 7. FOOTER
+// ОБЩИЙ ДЛЯ ВСЕХ СТРАНИЦ
+// ======================================================
+// ======================================================
+
+.site-footer {
+  background-color: $color-white;
+}
+
+
+// ======================================================
+// Основная часть Footer
+// ======================================================
+
+.footer-main {
+  padding: 70px 0;
+}
+
+.footer-grid {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+
+  gap: 60px;
+}
+
+
+// ======================================================
+// Описание магазина
+// ======================================================
+
+.footer-about {
+  max-width: 420px;
+
+  p {
+    margin: 18px 0 0;
+
+    color: $color-muted;
+
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
+.footer-logo {
+  display: inline-flex;
+
+  margin: 0;
+
+  font-size: 28px;
+}
+
+
+// ======================================================
+// Колонки Footer
+// ======================================================
+
+.footer-column {
+
+  h2 {
+    margin: 0 0 22px;
+
+    color: $color-accent;
+
+    font-size: 18px;
+
+    text-transform: uppercase;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  li + li {
+    margin-top: 14px;
+  }
+
+  a {
+    color: $color-muted;
+
+    font-size: 14px;
+
+    transition:
+            color 0.25s ease,
+            transform 0.25s ease;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+
+// ======================================================
+// Нижняя часть Footer
+// ======================================================
+
+.footer-bottom {
+  padding: 22px 0;
+
+  background-color: #e6e6e6;
+}
+
+.footer-bottom__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  p {
+    margin: 0;
+
+    color: $color-muted;
+
+    font-size: 13px;
+  }
+}
+
+
+// ======================================================
+// Социальные сети
+// ======================================================
+
+.footer-socials {
+  display: flex;
+
+  gap: 8px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    background-color: $color-white;
+    color: $color-muted;
+
+    font-size: 17px;
+
+    transition:
+            background-color 0.3s ease,
+            color 0.3s ease,
+            transform 0.3s ease;
+
+    &:hover {
+      background-color: $color-accent;
+      color: $color-white;
+
+      transform: translateY(-3px);
+    }
+  }
+}
+
+// ======================================================
+// ======================================================
+// 8. СТРАНИЦА ТОВАРА
+// product.html
+// ======================================================
+// ======================================================
+
+
+// ======================================================
+// 8.1 Верх страницы товара
+// ======================================================
+
+.product-page-header {
+  padding: 28px 0;
+
+  background-color: #f8f3f4;
+}
+
+.product-page-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.product-page-header h1 {
+  margin: 0;
+
+  color: $color-accent;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+}
+
+.product-page-header .breadcrumbs strong {
+  color: $color-accent;
+
+  font-weight: 700;
+}
+
+
+// ======================================================
+// 8.2 Основная область товара
+// ======================================================
+
+.product-page {
+  padding: 60px 0 80px;
+}
+
+.product-page__layout {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+
+  gap: 70px;
+
+  align-items: start;
+}
+
+
+// ======================================================
+// 8.3 Галерея товара
+// ======================================================
+
+.product-gallery {
+  min-width: 0;
+}
+
+.product-gallery__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 570px;
+
+  overflow: hidden;
+
+  background-color: #f4f4f4;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition: transform 0.5s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+}
+
+
+// ======================================================
+// Миниатюры фотографий
+// ======================================================
+
+.product-gallery__thumbnails {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 15px;
+}
+
+.product-thumbnail {
+  width: 85px;
+  height: 85px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  background-color: #f4f4f4;
+
+  border: 1px solid $color-border;
+
+  cursor: pointer;
+
+  transition:
+          border-color 0.25s ease,
+          transform 0.25s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  &:hover {
+    border-color: $color-accent;
+
+    transform: translateY(-2px);
+  }
+
+  &.is-active {
+    border: 2px solid $color-accent;
+  }
+}
+
+
+// ======================================================
+// 8.4 Информация о товаре
+// ======================================================
+
+.product-info {
+  padding-top: 25px;
+}
+
+.product-info__category {
+  margin: 0 0 10px;
+
+  color: $color-accent;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.product-info__title {
+  margin: 0 0 25px;
+
+  font-size: 32px;
+  line-height: 1.25;
+}
+
+.product-info__description {
+  margin: 0 0 30px;
+
+  color: $color-muted;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+// ======================================================
+// Характеристики товара
+// ======================================================
+
+.product-characteristics {
+  margin-bottom: 30px;
+  padding: 22px 24px;
+
+  background-color: $color-light;
+
+  border-left: 4px solid $color-accent;
+}
+
+.product-characteristic {
+  display: grid;
+
+  grid-template-columns: 150px 1fr;
+
+  gap: 15px;
+
+  font-size: 14px;
+
+  & + & {
+    margin-top: 10px;
+  }
+}
+
+.product-characteristic__name {
+  color: $color-muted;
+}
+
+.product-characteristic__value {
+  color: $color-text;
+
+  font-weight: 700;
+}
+
+
+// ======================================================
+// Цена
+// ======================================================
+
+.product-info__price {
+  margin-bottom: 22px;
+  padding-bottom: 22px;
+
+  color: $color-accent;
+
+  font-size: 30px;
+  font-weight: 700;
+
+  border-bottom: 1px solid $color-border;
+}
+
+
+// ======================================================
+// Наличие
+// ======================================================
+
+.product-info__stock {
+  margin: 0 0 25px;
+
+  font-size: 14px;
+
+  span {
+    color: $color-muted;
+  }
+
+  strong {
+    margin-left: 5px;
+
+    color: #4caf50;
+  }
+}
+
+
+// ======================================================
+// Количество
+// ======================================================
+
+.product-quantity {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+.product-quantity__label {
+  color: $color-muted;
+
+  font-size: 14px;
+}
+
+.quantity-control {
+  display: flex;
+
+  height: 40px;
+
+  border: 1px solid $color-border;
+}
+
+.quantity-control__button {
+  width: 38px;
+
+  padding: 0;
+
+  background-color: $color-white;
+  color: $color-text;
+
+  border: 0;
+
+  cursor: pointer;
+
+  transition:
+          background-color 0.25s ease,
+          color 0.25s ease;
+
+  &:hover {
+    background-color: $color-accent;
+    color: $color-white;
+  }
+}
+
+.quantity-control__input {
+  width: 50px;
+
+  padding: 0;
+
+  border: 0;
+  border-left: 1px solid $color-border;
+  border-right: 1px solid $color-border;
+
+  outline: none;
+
+  text-align: center;
+
+  appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+
+    margin: 0;
+  }
+}
+
+
+// ======================================================
+// Кнопка "Добавить в корзину"
+// ======================================================
+
+.product-add-cart {
+  min-width: 240px;
+
+  padding: 14px 24px;
+
+  background-color: $color-white;
+  color: $color-accent;
+
+  border: 1px solid $color-accent;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s ease;
+
+  &:hover {
+    background-color: $color-accent;
+    color: $color-white;
+
+    transform: translateY(-2px);
+  }
+}
+
+
+// ======================================================
+// 8.5 Похожие товары
+// ======================================================
+
+.related-products {
+  padding: 70px 0;
+
+  background-color: $color-white;
+
+  border-top: 1px solid $color-border;
+}
+
+.related-products__title {
+  margin: 0 0 40px;
+
+  font-size: 24px;
+
+  text-align: center;
+
+  text-transform: uppercase;
+}
+
+.related-products__grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 22px;
+}
+
+// ======================================================
+// ======================================================
+// 9. СТРАНИЦА КОРЗИНЫ
+// cart.html
+// ======================================================
+// ======================================================
+
+
+// ======================================================
+// 9.1 Верх страницы корзины
+// ======================================================
+
+.cart-page-header {
+  padding: 28px 0;
+
+  background-color: #f8f3f4;
+}
+
+.cart-page-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.cart-page-header h1 {
+  margin: 0;
+
+  color: $color-accent;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+}
+
+
+// ======================================================
+// 9.2 Основная область корзины
+// ======================================================
+
+.cart-page {
+  padding: 70px 0 80px;
+}
+
+
+// ======================================================
+// 9.3 Таблица товаров
+// ======================================================
+
+.cart-table-wrapper {
+  overflow-x: auto;
+}
+
+.cart-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  th {
+    padding: 0 15px 15px;
+
+    color: $color-text;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    border-bottom: 1px solid $color-border;
+
+    &:first-child {
+      padding-left: 0;
+
+      text-align: left;
+    }
+  }
+
+  td {
+    padding: 22px 15px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    border-bottom: 1px solid $color-border;
+  }
+
+  td:first-child {
+    padding-left: 0;
+
+    text-align: left;
+  }
+}
+
+.cart-table__product {
+  width: 42%;
+}
+
+
+// ======================================================
+// Товар в таблице
+// ======================================================
+
+.cart-product {
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+}
+
+.cart-product__image {
+  display: block;
+
+  width: 110px;
+  height: 125px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  background-color: #f3f3f3;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.35s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.06);
+  }
+}
+
+.cart-product__info {
+  min-width: 0;
+
+  h2 {
+    margin: 0 0 9px;
+
+    font-size: 15px;
+    line-height: 1.4;
+
+    a {
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+
+    color: $color-muted;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+  }
+}
+
+
+// ======================================================
+// Цена и сумма
+// ======================================================
+
+.cart-item-price,
+.cart-item-total {
+  color: $color-text;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+// ======================================================
+// Количество товара
+// ======================================================
+
+.cart-quantity {
+  display: inline-flex;
+
+  height: 38px;
+
+  border: 1px solid $color-border;
+}
+
+.cart-quantity__button {
+  width: 34px;
+
+  padding: 0;
+
+  background-color: $color-white;
+  color: $color-text;
+
+  border: 0;
+
+  cursor: pointer;
+
+  transition:
+          background-color 0.25s ease,
+          color 0.25s ease;
+
+  &:hover {
+    background-color: $color-accent;
+    color: $color-white;
+  }
+}
+
+.cart-quantity__input {
+  width: 42px;
+
+  padding: 0;
+
+  border: 0;
+  border-left: 1px solid $color-border;
+  border-right: 1px solid $color-border;
+
+  outline: none;
+
+  text-align: center;
+
+  appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+
+    margin: 0;
+  }
+}
+
+
+// ======================================================
+// Доставка
+// ======================================================
+
+.cart-shipping {
+  color: $color-muted;
+
+  font-size: 12px;
+
+  text-transform: uppercase;
+}
+
+
+// ======================================================
+// Удаление товара
+// ======================================================
+
+.cart-remove {
+  width: 32px;
+  height: 32px;
+
+  padding: 0;
+
+  background-color: transparent;
+  color: $color-muted;
+
+  border: 0;
+  border-radius: 50%;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition:
+          background-color 0.25s ease,
+          color 0.25s ease,
+          transform 0.25s ease;
+
+  &:hover {
+    background-color: $color-accent;
+    color: $color-white;
+
+    transform: rotate(90deg);
+  }
+}
+
+
+// ======================================================
+// 9.4 Пустая корзина
+// ======================================================
+
+.cart-empty {
+  padding: 70px 20px;
+
+  text-align: center;
+
+  h2 {
+    margin: 0 0 10px;
+
+    font-size: 26px;
+  }
+
+  p {
+    margin: 0 0 25px;
+
+    color: $color-muted;
+  }
+}
+
+.cart-empty__button {
+  display: inline-block;
+
+  padding: 12px 24px;
+
+  background-color: $color-accent;
+  color: $color-white;
+
+  border: 1px solid $color-accent;
+
+  font-weight: 700;
+
+  transition:
+          background-color 0.3s ease,
+          transform 0.3s ease;
+
+  &:hover {
+    background-color: $color-accent-dark;
+
+    transform: translateY(-2px);
+  }
+}
+
+
+// ======================================================
+// 9.5 Кнопки под корзиной
+// ======================================================
+
+.cart-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-top: 30px;
+}
+
+.cart-action-button {
+  padding: 11px 20px;
+
+  background-color: $color-white;
+  color: $color-text;
+
+  border: 1px solid $color-border;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+          border-color 0.25s ease,
+          color 0.25s ease,
+          transform 0.25s ease;
+
+  &:hover {
+    color: $color-accent;
+
+    border-color: $color-accent;
+
+    transform: translateY(-2px);
+  }
+}
+
+
+// ======================================================
+// 9.6 Нижняя часть корзины
+//
+// Доставка / Промокод / Итого
+// ======================================================
+
+.cart-summary-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1.1fr;
+
+  gap: 35px;
+
+  margin-top: 55px;
+}
+
+.cart-summary-block {
+  h2 {
+    margin: 0 0 15px;
+
+    font-size: 15px;
+
+    text-transform: uppercase;
+  }
+
+  > p {
+    margin: -5px 0 15px;
+
+    color: $color-muted;
+
+    font-size: 12px;
+  }
+  .cart-summary-block {
+    h2 {
+      margin: 0 0 15px;
+
+      font-size: 15px;
+
+      text-transform: uppercase;
+    }
+
+    > p {
+      margin: -5px 0 15px;
+
+      color: $color-muted;
+
+      font-size: 12px;
+    }
+  }
+
+  .cart-summary-grid > .cart-summary-block:nth-child(2) {
+    padding-top: 12px;
+  }
+}
+
+
+// ======================================================
+// Форма доставки
+// ======================================================
+
+.shipping-form,
+.coupon-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  input {
+    width: 100%;
+
+    padding: 11px 13px;
+
+    background-color: $color-white;
+
+    border: 1px solid $color-border;
+
+    outline: none;
+
+    font-size: 13px;
+
+    transition:
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
+
+    &:focus {
+      border-color: $color-accent;
+
+      box-shadow: 0 0 0 2px rgba(241, 109, 127, 0.10);
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-color: #d9534f;
+    }
+
+    &:valid:not(:placeholder-shown) {
+      border-color: #4caf50;
+    }
+  }
+
+  button {
+    align-self: flex-start;
+
+    padding: 9px 16px;
+
+    background-color: $color-white;
+    color: $color-text;
+
+    border: 1px solid $color-border;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+            color 0.25s ease,
+            border-color 0.25s ease;
+
+    &:hover {
+      color: $color-accent;
+
+      border-color: $color-accent;
+    }
+  }
+}
+
+
+// ======================================================
+// Сообщение промокода
+// ======================================================
+
+.cart-summary-block > .coupon-message {
+  min-height: 20px;
+
+  margin: 12px 0 0;
+
+  font-size: 12px;
+}
+
+.coupon-message.is-success {
+  color: #4caf50;
+}
+
+.coupon-message.is-error {
+  color: #d9534f;
+}
+
+
+// ======================================================
+// 9.7 Итоговая стоимость
+// ======================================================
+
+.cart-total {
+  align-self: start;
+
+  padding: 30px;
+
+  background-color: #f5f3f3;
+}
+
+.cart-total__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 13px;
+
+  color: $color-muted;
+
+  font-size: 13px;
+}
+
+.cart-total__row--grand {
+  margin: 20px 0;
+  padding-top: 18px;
+
+  color: $color-text;
+
+  border-top: 1px solid $color-border;
+
+  font-size: 18px;
+
+  strong:last-child {
+    color: $color-accent;
+  }
+}
+
+
+// ======================================================
+// Кнопка оформления заказа
+// ======================================================
+
+.cart-checkout-button {
+  display: block;
+
+  width: 100%;
+
+  padding: 13px 18px;
+
+  background-color: $color-accent;
+  color: $color-white;
+
+  text-align: center;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  transition:
+          background-color 0.3s ease,
+          transform 0.3s ease;
+
+  &:hover {
+    background-color: $color-accent-dark;
+
+    transform: translateY(-2px);
+  }
+
+  &.is-disabled {
+    background-color: #cccccc;
+
+    pointer-events: none;
+
+    cursor: default;
+  }
+}
+
+// ======================================================
+// ======================================================
+// 10. СТРАНИЦА ОФОРМЛЕНИЯ ЗАКАЗА
+// checkout.html
+// ======================================================
+// ======================================================
+
+
+// ======================================================
+// 10.1 Верх страницы
+// ======================================================
+
+.checkout-page-header {
+  padding: 28px 0;
+
+  background-color: #f8f3f4;
+}
+
+.checkout-page-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.checkout-page-header h1 {
+  margin: 0;
+
+  color: $color-accent;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+}
+
+
+// ======================================================
+// 10.2 Основная область
+// ======================================================
+
+.checkout-page {
+  padding: 65px 0 80px;
+}
+
+.checkout-form {
+  width: 100%;
+}
+
+
+// ======================================================
+// 10.3 Этап оформления
+// ======================================================
+
+.checkout-step {
+  border-bottom: 1px solid $color-border;
+
+  &:first-child {
+    border-top: 1px solid $color-border;
+  }
+}
+
+.checkout-step > summary {
+  position: relative;
+
+  padding: 22px 45px 22px 10px;
+
+  color: $color-text;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  list-style: none;
+
+  transition:
+          color 0.25s ease,
+          background-color 0.25s ease;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::after {
+    content: "+";
+
+    position: absolute;
+
+    top: 50%;
+    right: 15px;
+
+    color: $color-muted;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    transform: translateY(-50%);
+  }
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+.checkout-step[open] > summary {
+  color: $color-accent;
+
+  &::after {
+    content: "−";
+  }
+}
+
+.checkout-step__number {
+  margin-right: 7px;
+
+  color: inherit;
+}
+
+
+// ======================================================
+// Содержимое этапа
+// ======================================================
+
+.checkout-step__content {
+  padding: 5px 35px 35px;
+}
+
+
+// ======================================================
+// 10.4 Поля формы
+// ======================================================
+
+.checkout-fields {
+  display: grid;
+
+  gap: 22px;
+}
+
+.checkout-fields--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.checkout-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  label {
+    color: $color-text;
+
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    background-color: $color-white;
+    color: $color-text;
+
+    border: 1px solid $color-border;
+
+    outline: none;
+
+    font-size: 13px;
+
+    transition:
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
+
+    &:focus {
+      border-color: $color-accent;
+
+      box-shadow: 0 0 0 2px rgba(241, 109, 127, 0.10);
+    }
+  }
+
+  input {
+    height: 44px;
+  }
+
+  textarea {
+    resize: vertical;
+
+    min-height: 100px;
+  }
+
+  input:invalid:not(:placeholder-shown) {
+    border-color: #d9534f;
+  }
+
+  input:valid:not(:placeholder-shown) {
+    border-color: #4caf50;
+  }
+}
+
+.checkout-field--wide {
+  grid-column: 1 / -1;
+}
+
+.checkout-field--comment {
+  margin-top: 35px;
+}
+
+
+// ======================================================
+// 10.5 Получатель
+// ======================================================
+
+.checkout-checkbox {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: $color-muted;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  input {
+    accent-color: $color-accent;
+  }
+}
+
+.checkout-recipient {
+  margin-top: 25px;
+}
+
+
+// ======================================================
+// 10.6 Варианты доставки и оплаты
+// ======================================================
+
+.checkout-options {
+  display: grid;
+
+  gap: 12px;
+}
+
+.checkout-option {
+  display: grid;
+
+  grid-template-columns: 25px 1fr auto;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 16px 18px;
+
+  background-color: $color-white;
+
+  border: 1px solid $color-border;
+
+  cursor: pointer;
+
+  transition:
+          border-color 0.25s ease,
+          background-color 0.25s ease,
+          transform 0.25s ease;
+
+  &:hover {
+    border-color: $color-accent;
+
+    transform: translateX(3px);
+  }
+
+  &:has(input:checked) {
+    background-color: rgba(241, 109, 127, 0.04);
+
+    border-color: $color-accent;
+  }
+
+  input {
+    accent-color: $color-accent;
+  }
+}
+
+.checkout-option__content {
+  strong,
+  small {
+    display: block;
+  }
+
+  strong {
+    margin-bottom: 3px;
+
+    font-size: 13px;
+  }
+
+  small {
+    color: $color-muted;
+
+    font-size: 12px;
+  }
+}
+
+.checkout-option__price {
+  color: $color-accent;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+// ======================================================
+// 10.7 Товары при проверке заказа
+// ======================================================
+
+.checkout-order {
+  border-top: 1px solid $color-border;
+}
+
+.checkout-order-item {
+  display: grid;
+
+  grid-template-columns: 80px 1fr auto;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid $color-border;
+}
+
+.checkout-order-item__image {
+  width: 80px;
+  height: 90px;
+
+  overflow: hidden;
+
+  background-color: $color-light;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.06);
+  }
+}
+
+.checkout-order-item__info {
+  h3 {
+    margin: 0 0 6px;
+
+    font-size: 14px;
+
+    a {
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+
+    color: $color-muted;
+
+    font-size: 12px;
+  }
+}
+
+.checkout-order-item__price {
+  color: $color-accent;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+// ======================================================
+// 10.8 Итог заказа
+// ======================================================
+
+.checkout-total {
+  width: 420px;
+
+  margin: 35px 0 0 auto;
+  padding: 28px;
+
+  background-color: #f5f3f3;
+}
+
+.checkout-total__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 13px;
+
+  color: $color-muted;
+
+  font-size: 13px;
+}
+
+.checkout-total__row--grand {
+  margin: 20px 0;
+  padding-top: 18px;
+
+  color: $color-text;
+
+  border-top: 1px solid $color-border;
+
+  font-size: 18px;
+
+  strong:last-child {
+    color: $color-accent;
+  }
+}
+
+
+// ======================================================
+// Кнопка оформления
+// ======================================================
+
+.checkout-submit {
+  width: 100%;
+
+  padding: 14px 20px;
+
+  background-color: $color-accent;
+  color: $color-white;
+
+  border: 1px solid $color-accent;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+          background-color 0.3s ease,
+          transform 0.3s ease;
+
+  &:hover {
+    background-color: $color-accent-dark;
+
+    transform: translateY(-2px);
+  }
+}
+
+
+// ======================================================
+// 10.9 Пустая корзина
+// ======================================================
+
+.checkout-empty {
+  padding: 80px 20px;
+
+  text-align: center;
+
+  h2 {
+    margin: 0 0 12px;
+
+    font-size: 27px;
+  }
+
+  p {
+    margin: 0 0 25px;
+
+    color: $color-muted;
+  }
+
+  a {
+    display: inline-block;
+
+    padding: 12px 24px;
+
+    background-color: $color-accent;
+    color: $color-white;
+
+    font-weight: 700;
+
+    transition:
+            background-color 0.3s ease,
+            transform 0.3s ease;
+
+    &:hover {
+      background-color: $color-accent-dark;
+
+      transform: translateY(-2px);
+    }
+  }
+}
+
+
+// ======================================================
+// 10.10 Заказ успешно оформлен
+// ======================================================
+
+.checkout-success {
+  padding: 80px 20px;
+
+  text-align: center;
+
+  h2 {
+    margin: 18px 0 10px;
+
+    font-size: 30px;
+  }
+
+  p {
+    margin: 7px 0;
+
+    color: $color-muted;
+  }
+
+  strong {
+    color: $color-accent;
+  }
+
+  a {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 12px 25px;
+
+    background-color: $color-accent;
+    color: $color-white;
+
+    font-weight: 700;
+
+    transition:
+            background-color 0.3s ease,
+            transform 0.3s ease;
+
+    &:hover {
+      background-color: $color-accent-dark;
+
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.checkout-success__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto;
+
+  background-color: #4caf50;
+  color: $color-white;
+
+  border-radius: 50%;
+
+  font-size: 36px;
+  font-weight: 700;
+}
+
+
+
+// ======================================================
+// ======================================================
+// 11. АДАПТИВНАЯ ВЕРСТКА
+//
+// Контрольные размеры по заданию:
+// 1280px — большие мониторы
+// 1000px — десктоп / планшет горизонтально
+// 768px  — планшет вертикально
+// 320px  — мобильный телефон
+// ======================================================
+// ======================================================
+
+
+// ======================================================
+// 11.1 БОЛЬШИЕ МОНИТОРЫ — 1280px И БОЛЬШЕ
+// ======================================================
+
+@media (min-width: 1280px) {
+
+  .container {
+    width: min(90%, $container-width);
+  }
+
+}
+
+
+// ======================================================
+// ======================================================
+// 11.2 ДЕСКТОП / ПЛАНШЕТ ГОРИЗОНТАЛЬНО — ДО 1000px
+// ======================================================
+// ======================================================
+
+@media (max-width: 1000px) {
+
+
+  // ====================================================
+  // ОБЩИЕ СТИЛИ
+  // ====================================================
+
+  .container {
+    width: 94%;
+  }
+
+
+  // ====================================================
+  // ШАПКА
+  // ====================================================
+
+  .logo {
+    margin-right: 25px;
+  }
+
+  .search {
+    flex: 1;
+
+    width: auto;
+    min-width: 300px;
+  }
+
+  .header-actions {
+    gap: 18px;
+
+    margin-left: 25px;
+  }
+
+  .main-nav__list {
+    gap: 25px;
+  }
+
+
+  // ====================================================
+  // ГЛАВНАЯ СТРАНИЦА
+  // ====================================================
+
+  .hero__title {
+    font-size: 62px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .offer {
+    grid-template-columns: 1.6fr 1fr;
+  }
+
+
+  // ====================================================
+  // КАТАЛОГ
+  // ====================================================
+
+  .catalog__layout {
+    grid-template-columns: 190px 1fr;
+
+    gap: 30px;
+  }
+
+  .catalog-top-filters {
+    gap: 25px;
+  }
+
+  .catalog-products {
+    gap: 20px;
+  }
+
+
+  // ====================================================
+  // СТРАНИЦА ТОВАРА
+  // ====================================================
+
+  .product-page__layout {
+    gap: 40px;
+  }
+
+  .product-gallery__main {
+    height: 500px;
+  }
+
+  .related-products__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+  // ====================================================
+  // КОРЗИНА
+  // ====================================================
+
+  .cart-table {
+    min-width: 900px;
+  }
+
+  .cart-summary-grid {
+    gap: 25px;
+  }
+
+
+  // ====================================================
+  // CHECKOUT
+  // ====================================================
+
+  .checkout-step__content {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+}
+
+
+
+// ======================================================
+// ======================================================
+// 11.3 ПЛАНШЕТ — ДО 768px
+// ======================================================
+// ======================================================
+
+@media (max-width: 768px) {
+
+
+  // ====================================================
+  // ОБЩИЕ СТИЛИ
+  // ====================================================
+
+  .container {
+    width: 92%;
+  }
+
+
+  // ====================================================
+  // ШАПКА
+  // ====================================================
+
+  .header-top__inner {
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    padding: 18px 0;
+  }
+
+  .logo {
+    order: 1;
+
+    margin-right: auto;
+  }
+
+  .header-actions {
+    order: 2;
+
+    margin-left: auto;
+  }
+
+  .search {
+    order: 3;
+
+    width: 100%;
+    min-width: 0;
+
+    flex-basis: 100%;
+
+    margin-right: 0;
+  }
+
+  .main-nav__list {
+    flex-wrap: wrap;
+
+    gap: 12px 25px;
+
+    padding: 15px 0;
+  }
+
+
+  // ====================================================
+  // ГЛАВНАЯ — HERO
+  // ====================================================
+
+  .hero,
+  .hero__inner {
+    min-height: 520px;
+  }
+
+  .hero__content {
+    max-width: 520px;
+  }
+
+  .hero__title {
+    font-size: 54px;
+  }
+
+  .hero__description {
+    font-size: 18px;
+  }
+
+
+  // ====================================================
+  // ГЛАВНАЯ — РЕКЛАМНЫЕ КАТЕГОРИИ
+  // ====================================================
+
+  .promo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .promo-card--large {
+    height: 400px;
+  }
+
+  .promo-card--small {
+    height: 220px;
+  }
+
+
+  // ====================================================
+  // ГЛАВНАЯ — ТОВАРЫ
+  // ====================================================
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  // ====================================================
+  // ГЛАВНАЯ — АКЦИЯ
+  // ====================================================
+
+  .offer {
+    grid-template-columns: 1fr;
+
+    height: auto;
+  }
+
+  .offer__banner {
+    height: 370px;
+  }
+
+  .offer__benefits {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    padding: 35px 25px;
+  }
+
+  .benefit {
+    display: block;
+
+    text-align: center;
+  }
+
+  .benefit__icon {
+    margin: 0 auto 12px;
+  }
+
+
+  // ====================================================
+  // ОБЩИЙ БЛОК ОТЗЫВ + ПОДПИСКА
+  // ====================================================
+
+  .subscribe-section__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial {
+    padding: 40px 0;
+
+    border-right: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  .newsletter {
+    padding: 40px 0;
+  }
+
+
+  // ====================================================
+  // FOOTER
+  // ====================================================
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 45px;
+  }
+
+
+  // ====================================================
+  // КАТАЛОГ — ВЕРХ
+  // ====================================================
+
+  .catalog-header__inner {
+    gap: 20px;
+  }
+
+
+  // ====================================================
+  // КАТАЛОГ — ОСНОВНАЯ ОБЛАСТЬ
+  // ====================================================
+
+  .catalog__layout {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .catalog-sidebar {
+    width: 100%;
+  }
+
+
+  // ====================================================
+  // КАТАЛОГ — ВЕРХНИЕ ФИЛЬТРЫ
+  // ====================================================
+
+  .catalog-top-filters {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+  }
+
+  .catalog-filter-group--price {
+    grid-column: 1 / -1;
+  }
+
+
+  // ====================================================
+  // КАТАЛОГ — ТОВАРЫ
+  // ====================================================
+
+  .catalog-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  // ====================================================
+  // КАТАЛОГ — ПРЕИМУЩЕСТВА
+  // ====================================================
+
+  .catalog-benefits__grid {
+    gap: 30px;
+  }
+
+
+  // ====================================================
+  // СТРАНИЦА ТОВАРА — ВЕРХ
+  // ====================================================
+
+  .product-page-header__inner {
+    gap: 20px;
+  }
+
+
+  // ====================================================
+  // СТРАНИЦА ТОВАРА
+  // ====================================================
+
+  .product-page__layout {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .product-gallery {
+    width: 100%;
+    max-width: 620px;
+
+    margin: 0 auto;
+  }
+
+  .product-gallery__main {
+    height: 570px;
+  }
+
+  .product-info {
+    padding-top: 0;
+  }
+
+  .related-products__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  // ====================================================
+  // КОРЗИНА
+  // ====================================================
+
+  .cart-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .cart-table {
+    min-width: 900px;
+  }
+
+  .cart-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cart-total {
+    grid-column: 1 / -1;
+
+    width: 100%;
+  }
+
+
+  // ====================================================
+  // CHECKOUT
+  // ====================================================
+
+  .checkout-fields--two {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-field--wide {
+    grid-column: auto;
+  }
+
+  .checkout-total {
+    width: 100%;
+  }
+
+}
+
+
+
+// ======================================================
+// ======================================================
+// 11.4 МОБИЛЬНЫЙ ТЕЛЕФОН — ДО 320px
+// ======================================================
+// ======================================================
+
+@media (max-width: 320px) {
+
+
+  // ====================================================
+  // ОБЩИЕ СТИЛИ
+  // ====================================================
+
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: calc(100% - 24px);
+  }
+
+
+  // ====================================================
+  // ШАПКА
+  // ====================================================
+
+  .header-top__inner {
+    justify-content: center;
+
+    padding: 15px 0;
+  }
+
+  .logo {
+    margin: 0 auto;
+
+    font-size: 24px;
+  }
+
+  .header-actions {
+    width: 100%;
+
+    justify-content: center;
+
+    margin: 0;
+  }
+
+  .account-button {
+    padding: 8px 15px;
+  }
+
+
+  // ====================================================
+  // ПОИСК
+  // ====================================================
+
+  .search {
+    height: 40px;
+  }
+
+  .search__category {
+    width: 105px;
+
+    padding: 0 7px;
+
+    font-size: 12px;
+  }
+
+  .search__input {
+    min-width: 0;
+
+    padding: 0 8px;
+
+    font-size: 12px;
+  }
+
+  .search__button {
+    width: 40px;
+  }
+
+
+  // ====================================================
+  // МЕНЮ
+  // ====================================================
+
+  .main-nav__list {
+    gap: 10px 16px;
+
+    padding: 13px 0;
+
+    a {
+      font-size: 11px;
+    }
+  }
+
+
+  // ====================================================
+  // ГЛАВНАЯ — HERO
+  // ====================================================
+
+  .hero,
+  .hero__inner {
+    min-height: 460px;
+  }
+
+  .hero {
+    background-position: 65% center;
+  }
+
+  .hero__subtitle {
+    font-size: 13px;
+
+    letter-spacing: 1px;
+  }
+
+  .hero__title {
+    font-size: 44px;
+  }
+
+  .hero__description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .hero__button {
+    padding: 12px 20px;
+  }
+
+
+  // ====================================================
+  // ОБЩИЕ ЗАГОЛОВКИ
+  // ====================================================
+
+  .section-title {
+    font-size: 27px;
+  }
+
+  .section-subtitle {
+    margin-bottom: 30px;
+
+    font-size: 13px;
+  }
+
+
+  // ====================================================
+  // ГЛАВНАЯ — КАТЕГОРИИ
+  // ====================================================
+
+  .promo-categories {
+    padding: 30px 0;
+  }
+
+  .promo-card--large {
+    height: 330px;
+  }
+
+  .promo-card--small {
+    height: 180px;
+  }
+
+  .promo-card__label {
+    top: 12px;
+
+    padding: 8px 12px;
+
+    strong {
+      font-size: 18px;
+    }
+  }
+
+
+  // ====================================================
+  // ГЛАВНАЯ — ПОПУЛЯРНЫЕ ТОВАРЫ
+  // ====================================================
+
+  .featured-products {
+    padding: 50px 0;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .product-card__image {
+    height: 360px;
+  }
+
+
+  // ====================================================
+  // ГЛАВНАЯ — АКЦИЯ
+  // ====================================================
+
+  .offer-section {
+    padding: 50px 0;
+  }
+
+  .offer__banner {
+    height: 320px;
+  }
+
+  .offer__text {
+    top: 35px;
+    left: 20px;
+
+    p {
+      font-size: 32px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+  }
+
+  .offer__benefits {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+
+  // ====================================================
+  // ОТЗЫВ + ПОДПИСКА
+  // ====================================================
+
+  .testimonial {
+    flex-direction: column;
+
+    gap: 18px;
+
+    text-align: center;
+  }
+
+  .testimonial__content {
+    blockquote {
+      font-size: 14px;
+    }
+  }
+
+  .testimonial__dots {
+    justify-content: center;
+  }
+
+  .newsletter {
+    h2 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 11px;
+    }
+  }
+
+  .newsletter__form {
+    max-width: 100%;
+
+    input {
+      padding: 12px 14px;
+    }
+
+    button {
+      padding: 12px 14px;
+
+      font-size: 12px;
+    }
+  }
+
+
+  // ====================================================
+  // FOOTER
+  // ====================================================
+
+  .footer-main {
+    padding: 45px 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .footer-about {
+    max-width: none;
+  }
+
+  .footer-bottom__inner {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+
+  // ====================================================
+  // ОБЩИЕ ВЕРХНИЕ ПОЛОСЫ СТРАНИЦ
+  // ====================================================
+
+  .catalog-header__inner,
+  .product-page-header__inner,
+  .cart-page-header__inner,
+  .checkout-page-header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .breadcrumbs {
+    flex-wrap: wrap;
+
+    gap: 4px;
+
+    font-size: 11px;
+  }
+
+  .catalog-header h1,
+  .product-page-header h1,
+  .cart-page-header h1,
+  .checkout-page-header h1 {
+    font-size: 19px;
+  }
+
+
+  // ====================================================
+  // КАТАЛОГ
+  // ====================================================
+
+  .catalog {
+    padding: 40px 0 50px;
+  }
+
+  .catalog-top-filters {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .catalog-filter-group--price {
+    grid-column: auto;
+  }
+
+  .catalog-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 10px;
+  }
+
+  .catalog-sort,
+  .catalog-show {
+    width: 100%;
+
+    span {
+      flex: 0 0 105px;
+    }
+
+    select {
+      flex: 1;
+
+      min-width: 0;
+    }
+  }
+
+  .catalog-products {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-bottom {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .pagination {
+    justify-content: center;
+
+    overflow-x: auto;
+  }
+
+  .catalog-view-all {
+    width: 100%;
+  }
+
+
+  // ====================================================
+  // КАТАЛОГ — ПРЕИМУЩЕСТВА
+  // ====================================================
+
+  .catalog-benefits__grid {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+
+  // ====================================================
+  // СТРАНИЦА ТОВАРА
+  // ====================================================
+
+  .product-page {
+    padding: 40px 0 55px;
+  }
+
+  .product-page__layout {
+    gap: 30px;
+  }
+
+  .product-gallery__main {
+    height: 360px;
+  }
+
+
+  // ====================================================
+  // Миниатюры фотографий
+  // На телефоне прокручиваются горизонтально
+  // ====================================================
+
+  .product-gallery__thumbnails {
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+
+    padding-bottom: 6px;
+  }
+
+  .product-thumbnail {
+    width: 64px;
+    height: 64px;
+
+    flex: 0 0 64px;
+  }
+
+
+  // ====================================================
+  // Информация о товаре
+  // ====================================================
+
+  .product-info__title {
+    font-size: 26px;
+  }
+
+  .product-info__description {
+    font-size: 14px;
+  }
+
+  .product-characteristics {
+    padding: 18px 14px;
+  }
+
+  .product-characteristic {
+    grid-template-columns: 100px 1fr;
+
+    gap: 10px;
+
+    font-size: 12px;
+  }
+
+  .product-info__price {
+    font-size: 26px;
+  }
+
+  .product-quantity {
+    flex-wrap: wrap;
+  }
+
+  .product-add-cart {
+    width: 100%;
+    min-width: 0;
+  }
+
+
+  // ====================================================
+  // ПОХОЖИЕ ТОВАРЫ
+  // ====================================================
+
+  .related-products {
+    padding: 50px 0;
+  }
+
+  .related-products__grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  // ====================================================
+  // КОРЗИНА
+  //
+  // На телефоне таблица превращается
+  // в карточки товаров
+  // ====================================================
+
+  .cart-page {
+    padding: 40px 0 55px;
+  }
+
+  .cart-table-wrapper {
+    overflow: visible;
+  }
+
+  .cart-table {
+    display: block;
+
+    min-width: 0;
+
+    thead {
+      display: none;
+    }
+
+    tbody {
+      display: block;
+    }
+
+    tr {
+      display: block;
+
+      margin-bottom: 25px;
+      padding: 15px;
+
+      border: 1px solid $color-border;
+    }
+
+    td {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 15px;
+
+      width: 100%;
+
+      padding: 10px 0;
+
+      text-align: right;
+
+      border-bottom: 1px solid $color-border;
+
+      &::before {
+        color: $color-muted;
+
+        font-size: 11px;
+        font-weight: 700;
+
+        text-transform: uppercase;
+      }
+
+      &:first-child {
+        display: block;
+
+        padding: 0 0 15px;
+
+        text-align: left;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      &:nth-child(2)::before {
+        content: "Цена";
+      }
+
+      &:nth-child(3)::before {
+        content: "Количество";
+      }
+
+      &:nth-child(4)::before {
+        content: "Доставка";
+      }
+
+      &:nth-child(5)::before {
+        content: "Сумма";
+      }
+
+      &:nth-child(6)::before {
+        content: "Удалить";
+      }
+    }
+  }
+
+
+  // ====================================================
+  // Товар в мобильной корзине
+  // ====================================================
+
+  .cart-product {
+    gap: 15px;
+  }
+
+  .cart-product__image {
+    width: 90px;
+    height: 105px;
+  }
+
+  .cart-product__info {
+    h2 {
+      font-size: 14px;
+    }
+  }
+
+
+  // ====================================================
+  // Кнопки корзины
+  // ====================================================
+
+  .cart-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .cart-action-button {
+    width: 100%;
+
+    text-align: center;
+  }
+
+
+  // ====================================================
+  // Доставка / Промокод / Итого
+  // ====================================================
+
+  .cart-summary-grid {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .cart-total {
+    grid-column: auto;
+
+    padding: 22px;
+  }
+
+
+  // ====================================================
+  // CHECKOUT
+  // ====================================================
+
+  .checkout-page {
+    padding: 40px 0 55px;
+  }
+
+  .checkout-step > summary {
+    padding: 18px 35px 18px 5px;
+
+    font-size: 12px;
+  }
+
+  .checkout-step__content {
+    padding: 5px 5px 30px;
+  }
+
+  .checkout-fields--two {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-option {
+    grid-template-columns: 22px 1fr;
+
+    gap: 10px;
+
+    padding: 14px 10px;
+  }
+
+  .checkout-option__price {
+    grid-column: 2;
+
+    margin-top: 5px;
+  }
+
+
+  // ====================================================
+  // ТОВАРЫ В ПРОВЕРКЕ ЗАКАЗА
+  // ====================================================
+
+  .checkout-order-item {
+    grid-template-columns: 65px 1fr;
+
+    gap: 12px;
+  }
+
+  .checkout-order-item__image {
+    width: 65px;
+    height: 75px;
+  }
+
+  .checkout-order-item__price {
+    grid-column: 2;
+
+    font-size: 14px;
+  }
+
+  .checkout-total {
+    width: 100%;
+
+    padding: 20px;
+  }
+
+
+  // ====================================================
+  // УСПЕШНОЕ ОФОРМЛЕНИЕ
+  // ====================================================
+
+  .checkout-success,
+  .checkout-empty {
+    padding: 55px 10px;
+  }
+
+}

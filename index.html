@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="ANI STORE — интернет-магазин аниме-атрибутики. Фигурки, одежда и манга по популярным аниме и манге.">
+
+  <meta name="robots"
+        content="index, follow">
+
+  <meta name="author"
+        content="ANI STORE">
+
+  <title>ANI STORE — Магазин аниме-атрибутики</title>
+
+
+  <meta name="description"
+        content="ANI STORE — интернет-магазин аниме-атрибутики: фигурки, одежда и манга.">
+
+  <title>ANI STORE — Главная</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <div class="header-top">
+    <div class="container header-top__inner">
+
+      <a class="logo" href="index.html">
+        <span class="logo__main">ANI</span>
+        <span class="logo__accent">STORE</span>
+      </a>
+
+
+      <form class="search" action="#" method="get">
+
+        <label class="visually-hidden" for="search">
+          Поиск товаров
+        </label>
+
+        <select class="search__category"
+                name="category"
+                aria-label="Категория поиска">
+
+          <option value="all">Все категории</option>
+          <option value="figures">Фигурки</option>
+          <option value="clothes">Одежда</option>
+          <option value="manga">Манга</option>
+
+        </select>
+
+        <input class="search__input"
+               type="search"
+               id="search"
+               name="search"
+               placeholder="Поиск товаров..."
+               minlength="2">
+
+        <button class="search__button"
+                type="submit"
+                aria-label="Найти">
+          &#128269;
+        </button>
+
+      </form>
+
+
+      <div class="header-actions">
+
+        <a class="cart-link"
+           href="cart.html"
+           aria-label="Корзина">
+
+                    <span class="cart-link__icon">
+                        &#128722;
+                    </span>
+
+          <span class="cart-link__count">0</span>
+
+        </a>
+
+        <a class="account-button"
+           href="checkout.html">
+          Аккаунт
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <nav class="main-nav" aria-label="Основное меню">
+    <div class="container">
+
+      <ul class="main-nav__list">
+
+        <li>
+          <a href="index.html">Главная</a>
+        </li>
+
+        <li>
+          <a href="catalog.html#figures">Фигурки</a>
+        </li>
+
+        <li>
+          <a href="catalog.html#clothes">Одежда</a>
+        </li>
+
+        <li>
+          <a href="catalog.html#manga">Манга</a>
+        </li>
+
+        <li>
+          <a href="catalog.html">Каталог</a>
+        </li>
+
+        <li>
+          <a href="#sale">Акции</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+</header>
+
+
+<main>
+  <!-- Главный баннер -->
+  <section class="hero">
+
+    <div class="container hero__inner">
+
+      <div class="hero__content">
+
+        <p class="hero__subtitle">
+          Интернет-магазин аниме-атрибутики
+        </p>
+
+        <h1 class="hero__title">
+          ANI <span>STORE</span>
+        </h1>
+
+        <p class="hero__description">
+          Фигурки, одежда и манга по любимым аниме.
+          Собери свою коллекцию.
+        </p>
+
+        <a class="hero__button"
+           href="catalog.html">
+          Перейти в каталог
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Категории -->
+  <section class="promo-categories">
+
+    <div class="container promo-grid">
+
+      <!-- Левая колонка -->
+      <div class="promo-column promo-column--left">
+
+        <a class="promo-card promo-card--large"
+           href="catalog.html?category=figures">
+
+          <img src="img/promo/promo-figures.jpg"
+               alt="Аниме-фигурки">
+
+          <div class="promo-card__label">
+            <span>Коллекционные</span>
+            <strong>Фигурки</strong>
+          </div>
+
+        </a>
+
+
+        <a class="promo-card promo-card--small"
+           href="catalog.html">
+
+          <img src="img/promo/promo-new.jpg"
+               alt="Новинки магазина">
+
+          <div class="promo-card__label">
+            <span>Новые поступления</span>
+            <strong>Новинки</strong>
+          </div>
+
+        </a>
+
+      </div>
+
+
+      <!-- Правая колонка -->
+      <div class="promo-column promo-column--right">
+
+        <a class="promo-card promo-card--small"
+           href="catalog.html?category=manga">
+
+          <img src="img/promo/promo-manga.jpg"
+               alt="Манга">
+
+          <div class="promo-card__label">
+            <span>Любимые истории</span>
+            <strong>Манга</strong>
+          </div>
+
+        </a>
+
+
+        <a class="promo-card promo-card--large"
+           href="catalog.html?category=clothes">
+
+          <img src="img/promo/promo-clothes.jpg"
+               alt="Аниме-одежда">
+
+          <div class="promo-card__label">
+            <span>Стиль любимых героев</span>
+            <strong>Одежда</strong>
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+<section class="featured-products">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Популярные товары
+    </h2>
+
+    <p class="section-subtitle">
+      Популярные товары нашего магазина
+    </p>
+
+    <div class="products-grid"
+         id="featured-products">
+
+      <!-- Карточки создаёт JavaScript -->
+
+    </div>
+
+
+    <div class="featured-products__footer">
+
+      <a class="catalog-button"
+         href="catalog.html">
+        Смотреть весь каталог
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Акция и преимущества магазина -->
+<section class="offer-section" id="sale">
+
+  <div class="container">
+
+    <div class="offer">
+
+      <!-- Левая часть -->
+      <div class="offer__banner">
+
+        <img src="img/promo/promo-sale.jpg"
+             alt="Специальное предложение ANI STORE">
+
+        <div class="offer__text">
+          <p>
+            <strong>30%</strong>
+            <span>скидка</span>
+          </p>
+
+          <h2>На избранные товары</h2>
+        </div>
+
+      </div>
+
+
+      <!-- Правая часть -->
+      <div class="offer__benefits">
+
+        <article class="benefit">
+
+          <div class="benefit__icon">
+            🚚
+          </div>
+
+          <div>
+            <h3>Быстрая доставка</h3>
+
+            <p>
+              Отправляем заказы по всей стране.
+              Срок доставки зависит от выбранного региона.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="benefit">
+
+          <div class="benefit__icon">
+            %
+          </div>
+
+          <div>
+            <h3>Скидки и акции</h3>
+
+            <p>
+              Регулярные скидки на фигурки,
+              одежду и мангу.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="benefit">
+
+          <div class="benefit__icon">
+            ★
+          </div>
+
+          <div>
+            <h3>Гарантия качества</h3>
+
+            <p>
+              Мы внимательно проверяем товары
+              перед отправкой покупателю.
+            </p>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- Отзыв и подписка -->
+<section class="subscribe-section">
+
+  <div class="subscribe-section__background"></div>
+
+  <div class="container subscribe-section__inner">
+
+    <!-- Отзыв -->
+    <div class="testimonial">
+
+      <img class="testimonial__photo"
+           src="img/common/customer.jpg"
+           alt="Покупатель ANI STORE">
+
+      <div class="testimonial__content">
+
+        <blockquote>
+          «Отличный магазин. Заказ пришёл быстро,
+          фигурка была хорошо упакована и полностью
+          соответствовала фотографиям на сайте».
+        </blockquote>
+
+        <p class="testimonial__author">
+          <strong>Алексей</strong>
+          <span>Москва</span>
+        </p>
+
+        <div class="testimonial__dots"
+             aria-label="Переключение отзывов">
+
+          <button type="button"
+                  class="testimonial__dot is-active"
+                  aria-label="Отзыв 1"></button>
+
+          <button type="button"
+                  class="testimonial__dot"
+                  aria-label="Отзыв 2"></button>
+
+          <button type="button"
+                  class="testimonial__dot"
+                  aria-label="Отзыв 3"></button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Подписка -->
+    <div class="newsletter">
+
+      <h2>Подписка</h2>
+
+      <p>
+        Получайте информацию о новинках и акциях
+      </p>
+
+      <form class="newsletter__form"
+            action="#"
+            method="post">
+
+        <label class="visually-hidden"
+               for="newsletter-email">
+          Email
+        </label>
+
+        <input type="email"
+               id="newsletter-email"
+               name="email"
+               placeholder="Введите ваш email"
+               required>
+
+        <button type="submit">
+          Подписаться
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer class="site-footer">
+
+  <div class="footer-main">
+
+    <div class="container footer-grid">
+
+      <!-- О магазине -->
+      <div class="footer-about">
+
+        <a class="logo footer-logo"
+           href="index.html">
+
+          <span class="logo__main">ANI</span>
+          <span class="logo__accent">STORE</span>
+
+        </a>
+
+        <p>
+          ANI STORE — интернет-магазин аниме-атрибутики.
+          В каталоге представлены фигурки, одежда и манга
+          по популярным аниме и манге.
+        </p>
+
+        <p>
+          Мы стараемся собирать интересные товары
+          для поклонников японской культуры.
+        </p>
+
+      </div>
+
+
+      <!-- Компания -->
+      <nav class="footer-column"
+           aria-label="Компания">
+
+        <h2>Компания</h2>
+
+        <ul>
+          <li>
+            <a href="index.html">Главная</a>
+          </li>
+
+          <li>
+            <a href="catalog.html">Каталог</a>
+          </li>
+
+          <li>
+            <a href="#sale">Акции</a>
+          </li>
+
+          <li>
+            <a href="checkout.html">Аккаунт</a>
+          </li>
+        </ul>
+
+      </nav>
+
+
+      <!-- Информация -->
+      <nav class="footer-column"
+           aria-label="Информация">
+
+        <h2>Информация</h2>
+
+        <ul>
+          <li>
+            <a href="#">Доставка</a>
+          </li>
+
+          <li>
+            <a href="#">Оплата</a>
+          </li>
+
+          <li>
+            <a href="#">Возврат</a>
+          </li>
+
+          <li>
+            <a href="#">Контакты</a>
+          </li>
+        </ul>
+
+      </nav>
+
+
+      <!-- Категории -->
+      <nav class="footer-column"
+           aria-label="Категории">
+
+        <h2>Категории</h2>
+
+        <ul>
+          <li>
+            <a href="catalog.html?category=figures">
+              Фигурки
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html?category=clothes">
+              Одежда
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html?category=manga">
+              Манга
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html">
+              Все товары
+            </a>
+          </li>
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+
+  <!-- Нижняя часть -->
+
+  <div class="footer-bottom">
+
+    <div class="container footer-bottom__inner">
+
+      <p>
+        © 2026 ANI STORE. Учебный проект по Web-программированию.
+      </p>
+
+      <div class="footer-socials">
+
+        <a href="#"
+           aria-label="VK">
+          <i class="fa-brands fa-vk"></i>
+        </a>
+
+        <a href="#"
+           aria-label="Telegram">
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+
+        <a href="#"
+           aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+
+</html>

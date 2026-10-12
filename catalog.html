@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Каталог ANI STORE: коллекционные фигурки, одежда и манга по популярным аниме.">
+
+    <meta name="robots"
+          content="index, follow">
+
+    <meta name="author"
+          content="ANI STORE">
+
+    <title>Каталог — ANI STORE</title>
+
+
+    <meta name="description"
+          content="Каталог ANI STORE: аниме-фигурки, одежда и манга.">
+
+    <title>ANI STORE — Каталог</title>
+
+    <link rel="stylesheet"
+          href="css/styles.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ===================================================== -->
+<!-- ШАПКА -->
+<!-- ===================================================== -->
+
+<header class="site-header">
+
+
+    <!-- Верхняя часть шапки -->
+
+    <div class="header-top">
+
+        <div class="container header-top__inner">
+
+
+            <!-- Логотип -->
+
+            <a class="logo"
+               href="index.html">
+
+                <span class="logo__main">
+                    ANI
+                </span>
+
+                <span class="logo__accent">
+                    STORE
+                </span>
+
+            </a>
+
+
+            <!-- Поиск -->
+
+            <form class="search"
+                  action="catalog.html"
+                  method="get">
+
+                <label class="visually-hidden"
+                       for="header-search">
+                    Поиск товаров
+                </label>
+
+
+                <select class="search__category"
+                        name="category"
+                        aria-label="Категория поиска">
+
+                    <option value="all">
+                        Все категории
+                    </option>
+
+                    <option value="figures">
+                        Фигурки
+                    </option>
+
+                    <option value="clothes">
+                        Одежда
+                    </option>
+
+                    <option value="manga">
+                        Манга
+                    </option>
+
+                </select>
+
+
+                <input class="search__input"
+                       type="search"
+                       id="header-search"
+                       name="search"
+                       placeholder="Поиск товаров..."
+                       minlength="2">
+
+
+                <button class="search__button"
+                        type="submit"
+                        aria-label="Найти">
+
+                    &#128269;
+
+                </button>
+
+            </form>
+
+
+            <!-- Корзина и аккаунт -->
+
+            <div class="header-actions">
+
+                <a class="cart-link"
+                   href="cart.html"
+                   aria-label="Корзина">
+
+                    <span class="cart-link__icon">
+                        &#128722;
+                    </span>
+
+                    <span class="cart-link__count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a class="account-button"
+                   href="checkout.html">
+
+                    Аккаунт
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- ГЛАВНОЕ МЕНЮ -->
+    <!-- ================================================= -->
+
+    <nav class="main-nav"
+         aria-label="Основное меню">
+
+        <div class="container">
+
+            <ul class="main-nav__list">
+
+                <li>
+                    <a href="index.html">
+                        Главная
+                    </a>
+                </li>
+
+                <li>
+                    <a href="catalog.html?category=figures">
+                        Фигурки
+                    </a>
+                </li>
+
+                <li>
+                    <a href="catalog.html?category=clothes">
+                        Одежда
+                    </a>
+                </li>
+
+                <li>
+                    <a href="catalog.html?category=manga">
+                        Манга
+                    </a>
+                </li>
+
+                <li>
+                    <a href="catalog.html">
+                        Каталог
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#sale">
+                        Акции
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ===================================================== -->
+<!-- ОСНОВНАЯ ЧАСТЬ -->
+<!-- ===================================================== -->
+
+<main>
+
+
+    <!-- ================================================= -->
+    <!-- ВЕРХ КАТАЛОГА -->
+    <!-- ================================================= -->
+
+    <section class="catalog-header">
+
+        <div class="container catalog-header__inner">
+
+            <h1>
+                Новые поступления
+            </h1>
+
+
+            <p class="breadcrumbs">
+
+                <a href="index.html">
+                    Главная
+                </a>
+
+                <span>/</span>
+
+                <a href="catalog.html">
+                    Каталог
+                </a>
+
+                <span>/</span>
+
+                Новинки
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- КАТАЛОГ -->
+    <!-- ================================================= -->
+
+    <section class="catalog">
+
+        <div class="container catalog__layout">
+
+
+            <!-- ========================================= -->
+            <!-- ЛЕВАЯ КОЛОНКА -->
+            <!-- ========================================= -->
+
+            <aside class="catalog-sidebar">
+
+
+                <!-- Категории -->
+
+                <details class="sidebar-dropdown">
+
+                    <summary>
+                        Категории
+                    </summary>
+
+
+                    <div class="sidebar-dropdown__content catalog-filters">
+
+                        <button class="catalog-filter is-active"
+                                type="button"
+                                data-category-filter="all">
+
+                            Все товары
+
+                        </button>
+
+
+                        <button class="catalog-filter"
+                                type="button"
+                                data-category-filter="figures">
+
+                            Фигурки
+
+                        </button>
+
+
+                        <button class="catalog-filter"
+                                type="button"
+                                data-category-filter="clothes">
+
+                            Одежда
+
+                        </button>
+
+
+                        <button class="catalog-filter"
+                                type="button"
+                                data-category-filter="manga">
+
+                            Манга
+
+                        </button>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- Франшиза -->
+
+                <details class="sidebar-dropdown">
+
+                    <summary>
+                        Франшиза
+                    </summary>
+
+
+                    <div class="sidebar-dropdown__content">
+
+                        <label>
+                            <input type="checkbox">
+
+                            Naruto
+                        </label>
+
+
+                        <label>
+                            <input type="checkbox">
+
+                            Berserk
+                        </label>
+
+
+                        <label>
+                            <input type="checkbox">
+
+                            Jujutsu Kaisen
+                        </label>
+
+
+                        <label>
+                            <input type="checkbox">
+
+                            Frieren
+                        </label>
+
+
+                        <label>
+                            <input type="checkbox">
+
+                            Honkai: Star Rail
+                        </label>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- Производитель -->
+
+                <details class="sidebar-dropdown">
+
+                    <summary>
+                        Производитель
+                    </summary>
+
+
+                    <div class="sidebar-dropdown__content">
+
+                        <label>
+                            <input type="checkbox">
+
+                            Good Smile Company
+                        </label>
+
+
+                        <label>
+                            <input type="checkbox">
+
+                            Bandai
+                        </label>
+
+
+                        <label>
+                            <input type="checkbox">
+
+                            Kotobukiya
+                        </label>
+
+                    </div>
+
+                </details>
+
+            </aside>
+
+
+
+            <!-- ========================================= -->
+            <!-- ПРАВАЯ ЧАСТЬ -->
+            <!-- ========================================= -->
+
+            <div class="catalog-main">
+
+
+                <!-- ===================================== -->
+                <!-- ВЕРХНИЕ ФИЛЬТРЫ -->
+                <!-- ===================================== -->
+
+                <div class="catalog-top-filters">
+
+
+                    <!-- Популярное сейчас -->
+
+                    <div class="catalog-filter-group">
+
+                        <h3>
+                            Популярное сейчас
+                        </h3>
+
+
+                        <div class="trending-list">
+
+                            <button type="button">
+                                Naruto
+                            </button>
+
+                            <button type="button">
+                                Berserk
+                            </button>
+
+                            <button type="button">
+                                Jujutsu Kaisen
+                            </button>
+
+                            <button type="button">
+                                Frieren
+                            </button>
+
+                            <button type="button">
+                                Honkai: Star Rail
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Размер -->
+
+                    <div class="catalog-filter-group">
+
+                        <h3>
+                            Размер
+                        </h3>
+
+
+                        <div class="size-options">
+
+                            <label>
+                                <input type="checkbox">
+                                XS
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                S
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                M
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                L
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                XL
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                XXL
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Цена -->
+
+                    <div class="catalog-filter-group catalog-filter-group--price">
+
+                        <h3>
+                            Цена
+                        </h3>
+
+
+                        <input class="price-range"
+                               id="catalog-price-range"
+                               type="range"
+                               min="0"
+                               max="200000"
+                               value="200000"
+                               step="500">
+
+                        <div class="price-range__values">
+
+                            <span id="catalog-price-min">
+                                0
+                            </span>
+
+                            <span id="catalog-price-current">
+                                200 000 ₽
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ===================================== -->
+                <!-- СОРТИРОВКА -->
+                <!-- ===================================== -->
+
+                <div class="catalog-toolbar">
+
+
+                    <label class="catalog-sort">
+
+                        <span>
+                            Сортировать:
+                        </span>
+
+
+                        <select id="catalog-sort">
+
+                            <option value="default">
+                                По умолчанию
+                            </option>
+
+                            <option value="price-asc">
+                                Сначала дешевле
+                            </option>
+
+                            <option value="price-desc">
+                                Сначала дороже
+                            </option>
+
+                            <option value="name-asc">
+                                По названию А–Я
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+
+                    <label class="catalog-show">
+
+                        <span>
+                            Показать:
+                        </span>
+
+
+                        <select id="catalog-show">
+
+                            <option value="9">
+                                9
+                            </option>
+
+                            <option value="18">
+                                18
+                            </option>
+
+                            <option value="27">
+                                27
+                            </option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- ===================================== -->
+                <!-- ТОВАРЫ -->
+                <!-- ===================================== -->
+
+                <div class="catalog-products"
+                     id="catalog-products">
+
+                    <!--
+                    Карточки товаров
+                    автоматически создаёт JavaScript
+                    -->
+
+                </div>
+
+
+
+                <!-- Если товары не найдены -->
+
+                <p class="catalog-empty"
+                   id="catalog-empty"
+                   hidden>
+
+                    По вашему запросу товары не найдены.
+
+                </p>
+
+
+
+                <!-- ===================================== -->
+                <!-- ПАГИНАЦИЯ -->
+                <!-- ===================================== -->
+
+                <div class="catalog-bottom">
+
+
+                    <nav class="pagination"
+                         aria-label="Страницы каталога">
+
+
+                        <button type="button"
+                                class="pagination__arrow"
+                                aria-label="Предыдущая страница">
+
+                            ‹
+
+                        </button>
+
+
+                        <button type="button"
+                                class="pagination__page is-active">
+
+                            1
+
+                        </button>
+
+
+                        <button type="button"
+                                class="pagination__page">
+
+                            2
+
+                        </button>
+
+
+                        <button type="button"
+                                class="pagination__page">
+
+                            3
+
+                        </button>
+
+
+                        <button type="button"
+                                class="pagination__page">
+
+                            4
+
+                        </button>
+
+
+                        <span class="pagination__dots">
+                            ...
+                        </span>
+
+
+                        <button type="button"
+                                class="pagination__page">
+
+                            10
+
+                        </button>
+
+
+                        <button type="button"
+                                class="pagination__arrow"
+                                aria-label="Следующая страница">
+
+                            ›
+
+                        </button>
+
+                    </nav>
+
+
+
+                    <!-- Показать все -->
+
+                    <button class="catalog-view-all"
+                            type="button">
+
+                        Показать все
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- ПРЕИМУЩЕСТВА МАГАЗИНА -->
+    <!-- ================================================= -->
+
+    <section class="catalog-benefits">
+
+        <div class="container catalog-benefits__grid">
+
+
+            <!-- Доставка -->
+
+            <article class="catalog-benefit">
+
+                <div class="catalog-benefit__icon">
+                    🚚
+                </div>
+
+                <h2>
+                    Быстрая доставка
+                </h2>
+
+                <p>
+                    Отправляем заказы по всей стране.
+                    Срок доставки зависит от выбранного региона.
+                </p>
+
+            </article>
+
+
+
+            <!-- Скидки -->
+
+            <article class="catalog-benefit">
+
+                <div class="catalog-benefit__icon">
+                    %
+                </div>
+
+                <h2>
+                    Скидки и акции
+                </h2>
+
+                <p>
+                    Регулярные скидки на фигурки,
+                    одежду и мангу.
+                </p>
+
+            </article>
+
+
+
+            <!-- Качество -->
+
+            <article class="catalog-benefit">
+
+                <div class="catalog-benefit__icon">
+                    ★
+                </div>
+
+                <h2>
+                    Гарантия качества
+                </h2>
+
+                <p>
+                    Проверяем товары перед отправкой
+                    покупателю.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ===================================================== -->
+<!-- ОТЗЫВ + ПОДПИСКА -->
+<!-- ===================================================== -->
+
+<section class="subscribe-section">
+
+    <div class="subscribe-section__background"></div>
+
+
+    <div class="container subscribe-section__inner">
+
+
+        <!-- Отзыв -->
+
+        <div class="testimonial">
+
+            <img class="testimonial__photo"
+                 src="img/common/customer.jpg"
+                 alt="Покупатель ANI STORE">
+
+
+            <div class="testimonial__content">
+
+                <blockquote>
+
+                    «Отличный магазин. Заказ пришёл быстро,
+                    товар был хорошо упакован и полностью
+                    соответствовал фотографиям на сайте».
+
+                </blockquote>
+
+
+                <p class="testimonial__author">
+
+                    <strong>
+                        Алексей
+                    </strong>
+
+                    <span>
+                        Москва
+                    </span>
+
+                </p>
+
+
+                <div class="testimonial__dots"
+                     aria-label="Переключение отзывов">
+
+
+                    <button type="button"
+                            class="testimonial__dot is-active"
+                            aria-label="Отзыв 1">
+                    </button>
+
+
+                    <button type="button"
+                            class="testimonial__dot"
+                            aria-label="Отзыв 2">
+                    </button>
+
+
+                    <button type="button"
+                            class="testimonial__dot"
+                            aria-label="Отзыв 3">
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Подписка -->
+
+        <div class="newsletter">
+
+            <h2>
+                Подписка
+            </h2>
+
+            <p>
+                Получайте информацию о новинках и акциях
+            </p>
+
+
+            <form class="newsletter__form"
+                  action="#"
+                  method="post">
+
+
+                <label class="visually-hidden"
+                       for="catalog-newsletter-email">
+
+                    Email
+
+                </label>
+
+
+                <input type="email"
+                       id="catalog-newsletter-email"
+                       name="email"
+                       placeholder="Введите ваш email"
+                       required>
+
+
+                <button type="submit">
+                    Подписаться
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<footer class="site-footer">
+
+
+    <!-- Основная часть Footer -->
+
+    <div class="footer-main">
+
+        <div class="container footer-grid">
+
+
+            <!-- О магазине -->
+
+            <div class="footer-about">
+
+                <a class="logo footer-logo"
+                   href="index.html">
+
+                    <span class="logo__main">
+                        ANI
+                    </span>
+
+                    <span class="logo__accent">
+                        STORE
+                    </span>
+
+                </a>
+
+
+                <p>
+                    ANI STORE — интернет-магазин аниме-атрибутики.
+                    В каталоге представлены фигурки, одежда и манга
+                    по популярным аниме и манге.
+                </p>
+
+
+                <p>
+                    Мы собираем интересные товары
+                    для поклонников японской культуры.
+                </p>
+
+            </div>
+
+
+
+            <!-- Компания -->
+
+            <nav class="footer-column"
+                 aria-label="Компания">
+
+                <h2>
+                    Компания
+                </h2>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Главная
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalog.html">
+                            Каталог
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#sale">
+                            Акции
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="checkout.html">
+                            Аккаунт
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+
+            <!-- Информация -->
+
+            <nav class="footer-column"
+                 aria-label="Информация">
+
+                <h2>
+                    Информация
+                </h2>
+
+                <ul>
+
+                    <li>
+                        <a href="#">
+                            Доставка
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Оплата
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Возврат
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Контакты
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+
+            <!-- Категории -->
+
+            <nav class="footer-column"
+                 aria-label="Категории">
+
+                <h2>
+                    Категории
+                </h2>
+
+                <ul>
+
+                    <li>
+                        <a href="catalog.html?category=figures">
+                            Фигурки
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalog.html?category=clothes">
+                            Одежда
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalog.html?category=manga">
+                            Манга
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalog.html">
+                            Все товары
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Нижняя часть Footer -->
+
+    <div class="footer-bottom">
+
+        <div class="container footer-bottom__inner">
+
+            <p>
+                © 2026 ANI STORE.
+                Учебный проект по Web-программированию.
+            </p>
+
+
+            <div class="footer-socials">
+
+                <a href="#"
+                   aria-label="VK">
+                    <i class="fa-brands fa-vk"></i>
+                </a>
+
+                <a href="#"
+                   aria-label="Telegram">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+
+                <a href="#"
+                   aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ===================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ===================================================== -->
+
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+
+
+</body>
+
+</html>

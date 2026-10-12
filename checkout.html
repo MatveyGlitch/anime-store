@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Оформление заказа в интернет-магазине аниме-атрибутики ANI STORE.">
+
+    <meta name="robots"
+          content="index, follow">
+
+    <meta name="author"
+          content="ANI STORE">
+
+    <title>Оформление заказа — ANI STORE</title>
+
+
+    <meta name="description"
+          content="Оформление заказа в интернет-магазине ANI STORE.">
+
+    <title>ANI STORE — Оформление заказа</title>
+
+    <link rel="stylesheet"
+          href="css/styles.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ===================================================== -->
+<!-- ШАПКА -->
+<!-- ===================================================== -->
+
+<header class="site-header">
+
+    <div class="header-top">
+
+        <div class="container header-top__inner">
+
+            <a class="logo"
+               href="index.html">
+
+                <span class="logo__main">ANI</span>
+                <span class="logo__accent">STORE</span>
+
+            </a>
+
+
+            <form class="search"
+                  action="catalog.html"
+                  method="get">
+
+                <label class="visually-hidden"
+                       for="header-search">
+                    Поиск товаров
+                </label>
+
+                <select class="search__category"
+                        name="category"
+                        aria-label="Категория поиска">
+
+                    <option value="all">
+                        Все категории
+                    </option>
+
+                    <option value="figures">
+                        Фигурки
+                    </option>
+
+                    <option value="clothes">
+                        Одежда
+                    </option>
+
+                    <option value="manga">
+                        Манга
+                    </option>
+
+                </select>
+
+
+                <input class="search__input"
+                       type="search"
+                       id="header-search"
+                       name="search"
+                       placeholder="Поиск товаров..."
+                       minlength="2">
+
+
+                <button class="search__button"
+                        type="submit"
+                        aria-label="Найти">
+                    &#128269;
+                </button>
+
+            </form>
+
+
+            <div class="header-actions">
+
+                <a class="cart-link"
+                   href="cart.html"
+                   aria-label="Корзина">
+
+                    <span class="cart-link__icon">
+                        &#128722;
+                    </span>
+
+                    <span class="cart-link__count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a class="account-button"
+                   href="checkout.html">
+                    Аккаунт
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Главное меню -->
+
+    <nav class="main-nav"
+         aria-label="Основное меню">
+
+        <div class="container">
+
+            <ul class="main-nav__list">
+
+                <li>
+                    <a href="index.html">
+                        Главная
+                    </a>
+                </li>
+
+                <li>
+                    <a href="catalog.html?category=figures">
+                        Фигурки
+                    </a>
+                </li>
+
+                <li>
+                    <a href="catalog.html?category=clothes">
+                        Одежда
+                    </a>
+                </li>
+
+                <li>
+                    <a href="catalog.html?category=manga">
+                        Манга
+                    </a>
+                </li>
+
+                <li>
+                    <a href="catalog.html">
+                        Каталог
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#sale">
+                        Акции
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ===================================================== -->
+<!-- ОСНОВНАЯ ЧАСТЬ -->
+<!-- ===================================================== -->
+
+<main>
+
+
+    <!-- ================================================= -->
+    <!-- ВЕРХ СТРАНИЦЫ -->
+    <!-- ================================================= -->
+
+    <section class="checkout-page-header">
+
+        <div class="container checkout-page-header__inner">
+
+            <h1>
+                Оформление заказа
+            </h1>
+
+
+            <p class="breadcrumbs">
+
+                <a href="index.html">
+                    Главная
+                </a>
+
+                <span>/</span>
+
+                <a href="cart.html">
+                    Корзина
+                </a>
+
+                <span>/</span>
+
+                Оформление
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- ОФОРМЛЕНИЕ ЗАКАЗА -->
+    <!-- ================================================= -->
+
+    <section class="checkout-page">
+
+        <div class="container">
+
+            <form class="checkout-form"
+                  id="checkout-form">
+
+
+                <!-- ===================================== -->
+                <!-- 01. КОНТАКТНЫЕ ДАННЫЕ -->
+                <!-- ===================================== -->
+
+                <details class="checkout-step"
+                         open>
+
+                    <summary>
+                        <span class="checkout-step__number">
+                            01.
+                        </span>
+
+                        Контактные данные
+                    </summary>
+
+
+                    <div class="checkout-step__content">
+
+                        <div class="checkout-fields checkout-fields--two">
+
+
+                            <div class="checkout-field">
+
+                                <label for="checkout-name">
+                                    Имя *
+                                </label>
+
+                                <input id="checkout-name"
+                                       name="name"
+                                       type="text"
+                                       placeholder="Ваше имя"
+                                       minlength="2"
+                                       required>
+
+                            </div>
+
+
+                            <div class="checkout-field">
+
+                                <label for="checkout-surname">
+                                    Фамилия *
+                                </label>
+
+                                <input id="checkout-surname"
+                                       name="surname"
+                                       type="text"
+                                       placeholder="Ваша фамилия"
+                                       minlength="2"
+                                       required>
+
+                            </div>
+
+
+                            <div class="checkout-field">
+
+                                <label for="checkout-email">
+                                    Email *
+                                </label>
+
+                                <input id="checkout-email"
+                                       name="email"
+                                       type="email"
+                                       placeholder="example@mail.ru"
+                                       required>
+
+                            </div>
+
+
+                            <div class="checkout-field">
+
+                                <label for="checkout-phone">
+                                    Телефон *
+                                </label>
+
+                                <input id="checkout-phone"
+                                       name="phone"
+                                       type="tel"
+                                       placeholder="+7 999 000-00-00"
+                                       required>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- ===================================== -->
+                <!-- 02. АДРЕС ДОСТАВКИ -->
+                <!-- ===================================== -->
+
+                <details class="checkout-step">
+
+                    <summary>
+                        <span class="checkout-step__number">
+                            02.
+                        </span>
+
+                        Адрес доставки
+                    </summary>
+
+
+                    <div class="checkout-step__content">
+
+                        <div class="checkout-fields checkout-fields--two">
+
+
+                            <div class="checkout-field">
+
+                                <label for="checkout-city">
+                                    Город *
+                                </label>
+
+                                <input id="checkout-city"
+                                       name="city"
+                                       type="text"
+                                       placeholder="Город"
+                                       required>
+
+                            </div>
+
+
+                            <div class="checkout-field">
+
+                                <label for="checkout-region">
+                                    Регион
+                                </label>
+
+                                <input id="checkout-region"
+                                       name="region"
+                                       type="text"
+                                       placeholder="Регион">
+
+                            </div>
+
+
+                            <div class="checkout-field checkout-field--wide">
+
+                                <label for="checkout-address">
+                                    Адрес *
+                                </label>
+
+                                <input id="checkout-address"
+                                       name="address"
+                                       type="text"
+                                       placeholder="Улица, дом, квартира"
+                                       required>
+
+                            </div>
+
+
+                            <div class="checkout-field">
+
+                                <label for="checkout-postcode">
+                                    Почтовый индекс
+                                </label>
+
+                                <input id="checkout-postcode"
+                                       name="postcode"
+                                       type="text"
+                                       placeholder="Почтовый индекс"
+                                       pattern="[0-9]{5,6}">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- ===================================== -->
+                <!-- 03. ПОЛУЧАТЕЛЬ -->
+                <!-- ===================================== -->
+
+                <details class="checkout-step">
+
+                    <summary>
+                        <span class="checkout-step__number">
+                            03.
+                        </span>
+
+                        Получатель
+                    </summary>
+
+
+                    <div class="checkout-step__content">
+
+                        <label class="checkout-checkbox">
+
+                            <input id="same-recipient"
+                                   type="checkbox"
+                                   checked>
+
+                            <span>
+                                Получатель совпадает с покупателем
+                            </span>
+
+                        </label>
+
+
+                        <div class="checkout-recipient"
+                             id="checkout-recipient"
+                             hidden>
+
+                            <div class="checkout-fields checkout-fields--two">
+
+                                <div class="checkout-field">
+
+                                    <label for="recipient-name">
+                                        Имя получателя *
+                                    </label>
+
+                                    <input id="recipient-name"
+                                           type="text"
+                                           placeholder="Имя">
+
+                                </div>
+
+
+                                <div class="checkout-field">
+
+                                    <label for="recipient-phone">
+                                        Телефон получателя *
+                                    </label>
+
+                                    <input id="recipient-phone"
+                                           type="tel"
+                                           placeholder="+7 999 000-00-00">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- ===================================== -->
+                <!-- 04. СПОСОБ ДОСТАВКИ -->
+                <!-- ===================================== -->
+
+                <details class="checkout-step">
+
+                    <summary>
+                        <span class="checkout-step__number">
+                            04.
+                        </span>
+
+                        Способ доставки
+                    </summary>
+
+
+                    <div class="checkout-step__content">
+
+                        <div class="checkout-options">
+
+
+                            <label class="checkout-option">
+
+                                <input type="radio"
+                                       name="delivery"
+                                       value="courier"
+                                       checked>
+
+                                <span class="checkout-option__content">
+
+                                    <strong>
+                                        Курьерская доставка
+                                    </strong>
+
+                                    <small>
+                                        Доставка до указанного адреса
+                                    </small>
+
+                                </span>
+
+                                <span class="checkout-option__price">
+                                    Бесплатно
+                                </span>
+
+                            </label>
+
+
+                            <label class="checkout-option">
+
+                                <input type="radio"
+                                       name="delivery"
+                                       value="pickup">
+
+                                <span class="checkout-option__content">
+
+                                    <strong>
+                                        Самовывоз
+                                    </strong>
+
+                                    <small>
+                                        Получение заказа в пункте выдачи
+                                    </small>
+
+                                </span>
+
+                                <span class="checkout-option__price">
+                                    Бесплатно
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- ===================================== -->
+                <!-- 05. СПОСОБ ОПЛАТЫ -->
+                <!-- ===================================== -->
+
+                <details class="checkout-step">
+
+                    <summary>
+                        <span class="checkout-step__number">
+                            05.
+                        </span>
+
+                        Способ оплаты
+                    </summary>
+
+
+                    <div class="checkout-step__content">
+
+                        <div class="checkout-options">
+
+
+                            <label class="checkout-option">
+
+                                <input type="radio"
+                                       name="payment"
+                                       value="card"
+                                       checked>
+
+                                <span class="checkout-option__content">
+
+                                    <strong>
+                                        Банковская карта
+                                    </strong>
+
+                                    <small>
+                                        Оплата заказа банковской картой
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+                            <label class="checkout-option">
+
+                                <input type="radio"
+                                       name="payment"
+                                       value="cash">
+
+                                <span class="checkout-option__content">
+
+                                    <strong>
+                                        При получении
+                                    </strong>
+
+                                    <small>
+                                        Оплата во время получения заказа
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+                            <label class="checkout-option">
+
+                                <input type="radio"
+                                       name="payment"
+                                       value="sbp">
+
+                                <span class="checkout-option__content">
+
+                                    <strong>
+                                        СБП
+                                    </strong>
+
+                                    <small>
+                                        Оплата через Систему быстрых платежей
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- ===================================== -->
+                <!-- 06. ПРОВЕРКА ЗАКАЗА -->
+                <!-- ===================================== -->
+
+                <details class="checkout-step">
+
+                    <summary>
+                        <span class="checkout-step__number">
+                            06.
+                        </span>
+
+                        Проверка заказа
+                    </summary>
+
+
+                    <div class="checkout-step__content">
+
+
+                        <!-- Товары -->
+
+                        <div class="checkout-order"
+                             id="checkout-order">
+
+                            <!-- Создаёт JavaScript -->
+
+                        </div>
+
+
+
+                        <!-- Комментарий -->
+
+                        <div class="checkout-field checkout-field--comment">
+
+                            <label for="checkout-comment">
+                                Комментарий к заказу
+                            </label>
+
+                            <textarea id="checkout-comment"
+                                      name="comment"
+                                      rows="4"
+                                      placeholder="Комментарий для магазина"></textarea>
+
+                        </div>
+
+
+
+                        <!-- Итог -->
+
+                        <div class="checkout-total">
+
+
+                            <div class="checkout-total__row">
+
+                                <span>
+                                    Товары
+                                </span>
+
+                                <span id="checkout-subtotal">
+                                    0 ₽
+                                </span>
+
+                            </div>
+
+
+                            <div class="checkout-total__row">
+
+                                <span>
+                                    Доставка
+                                </span>
+
+                                <span>
+                                    Бесплатно
+                                </span>
+
+                            </div>
+
+
+                            <div class="checkout-total__row checkout-total__row--grand">
+
+                                <strong>
+                                    Итого
+                                </strong>
+
+                                <strong id="checkout-total">
+                                    0 ₽
+                                </strong>
+
+                            </div>
+
+
+                            <button class="checkout-submit"
+                                    type="submit">
+
+                                Оформить заказ
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </details>
+
+
+            </form>
+
+
+
+            <!-- ========================================= -->
+            <!-- ПУСТАЯ КОРЗИНА -->
+            <!-- ========================================= -->
+
+            <div class="checkout-empty"
+                 id="checkout-empty"
+                 hidden>
+
+                <h2>
+                    В корзине нет товаров
+                </h2>
+
+                <p>
+                    Перед оформлением заказа
+                    добавьте товары в корзину.
+                </p>
+
+
+                <a href="catalog.html">
+                    Перейти в каталог
+                </a>
+
+            </div>
+
+
+            <!-- ========================================= -->
+            <!-- УСПЕШНЫЙ ЗАКАЗ -->
+            <!-- ========================================= -->
+
+            <div class="checkout-success"
+                 id="checkout-success"
+                 hidden>
+
+                <div class="checkout-success__icon">
+                    ✓
+                </div>
+
+                <h2>
+                    Заказ оформлен
+                </h2>
+
+                <p>
+                    Спасибо за покупку в ANI STORE.
+                </p>
+
+                <p>
+                    Номер заказа:
+                    <strong id="checkout-order-number">
+                        #000000
+                    </strong>
+                </p>
+
+
+                <a href="index.html">
+                    Вернуться на главную
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ===================================================== -->
+<!-- ОТЗЫВ + ПОДПИСКА -->
+<!-- ===================================================== -->
+
+<section class="subscribe-section">
+
+    <div class="subscribe-section__background"></div>
+
+
+    <div class="container subscribe-section__inner">
+
+
+        <div class="testimonial">
+
+            <img class="testimonial__photo"
+                 src="img/common/customer.jpg"
+                 alt="Покупатель ANI STORE">
+
+
+            <div class="testimonial__content">
+
+                <blockquote>
+                    «Отличный магазин. Заказ пришёл быстро,
+                    товар был хорошо упакован и полностью
+                    соответствовал фотографиям на сайте».
+                </blockquote>
+
+
+                <p class="testimonial__author">
+
+                    <strong>
+                        Алексей
+                    </strong>
+
+                    <span>
+                        Москва
+                    </span>
+
+                </p>
+
+
+                <div class="testimonial__dots">
+
+                    <button type="button"
+                            class="testimonial__dot is-active"
+                            aria-label="Отзыв 1">
+                    </button>
+
+                    <button type="button"
+                            class="testimonial__dot"
+                            aria-label="Отзыв 2">
+                    </button>
+
+                    <button type="button"
+                            class="testimonial__dot"
+                            aria-label="Отзыв 3">
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="newsletter">
+
+            <h2>
+                Подписка
+            </h2>
+
+            <p>
+                Получайте информацию о новинках и акциях
+            </p>
+
+
+            <form class="newsletter__form"
+                  action="#"
+                  method="post">
+
+                <label class="visually-hidden"
+                       for="checkout-newsletter-email">
+                    Email
+                </label>
+
+
+                <input type="email"
+                       id="checkout-newsletter-email"
+                       name="email"
+                       placeholder="Введите ваш email"
+                       required>
+
+
+                <button type="submit">
+                    Подписаться
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-about">
+
+                <a class="logo footer-logo"
+                   href="index.html">
+
+                    <span class="logo__main">
+                        ANI
+                    </span>
+
+                    <span class="logo__accent">
+                        STORE
+                    </span>
+
+                </a>
+
+
+                <p>
+                    ANI STORE — интернет-магазин аниме-атрибутики.
+                    В каталоге представлены фигурки, одежда и манга
+                    по популярным аниме и манге.
+                </p>
+
+
+                <p>
+                    Мы собираем интересные товары
+                    для поклонников японской культуры.
+                </p>
+
+            </div>
+
+
+
+            <nav class="footer-column"
+                 aria-label="Компания">
+
+                <h2>
+                    Компания
+                </h2>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Главная
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalog.html">
+                            Каталог
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#sale">
+                            Акции
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="checkout.html">
+                            Аккаунт
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+
+            <nav class="footer-column"
+                 aria-label="Информация">
+
+                <h2>
+                    Информация
+                </h2>
+
+                <ul>
+
+                    <li>
+                        <a href="#">
+                            Доставка
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Оплата
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Возврат
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Контакты
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+
+            <nav class="footer-column"
+                 aria-label="Категории">
+
+                <h2>
+                    Категории
+                </h2>
+
+                <ul>
+
+                    <li>
+                        <a href="catalog.html?category=figures">
+                            Фигурки
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalog.html?category=clothes">
+                            Одежда
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalog.html?category=manga">
+                            Манга
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalog.html">
+                            Все товары
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="container footer-bottom__inner">
+
+            <p>
+                © 2026 ANI STORE.
+                Учебный проект по Web-программированию.
+            </p>
+
+
+            <div class="footer-socials">
+
+                <a href="#"
+                   aria-label="VK">
+                    <i class="fa-brands fa-vk"></i>
+                </a>
+
+                <a href="#"
+                   aria-label="Telegram">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+
+                <a href="#"
+                   aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ===================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ===================================================== -->
+
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
+
+
+</body>
+
+</html>

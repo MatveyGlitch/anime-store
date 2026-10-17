@@ -284,6 +284,14 @@ let catalogSearch = '';
 
 let catalogSort = 'default';
 
+// Количество товаров на странице и текущая страница
+let catalogPageSize = 9;
+let catalogCurrentPage = 1;
+let catalogTotalPages = 1;
+
+// Режим отображения всех найденных товаров
+let catalogShowAll = false;
+
 // Максимальная цена,
 // выбранная ползунком
 
@@ -421,6 +429,37 @@ function renderCatalogProducts() {
 
 
     // --------------------------------------------------
+    // ПАГИНАЦИЯ: берём товары только текущей страницы
+    // (сначала фильтруем и сортируем весь список)
+    // --------------------------------------------------
+
+    const totalProducts = products.length;
+
+    catalogTotalPages = Math.max(
+        1,
+        Math.ceil(totalProducts / catalogPageSize)
+    );
+
+    // Защита от выхода за пределы доступных страниц
+    catalogCurrentPage = Math.min(
+        Math.max(1, catalogCurrentPage),
+        catalogTotalPages
+    );
+
+    if (!catalogShowAll) {
+
+        const startIndex =
+            (catalogCurrentPage - 1) * catalogPageSize;
+
+        products = products.slice(
+            startIndex,
+            startIndex + catalogPageSize
+        );
+
+    }
+
+
+    // --------------------------------------------------
     // СОЗДАЁМ КАРТОЧКИ
     // --------------------------------------------------
 
@@ -428,6 +467,9 @@ function renderCatalogProducts() {
         products
             .map(createProductCard)
             .join('');
+
+    // Обновляем кнопки страниц и «Показать все»
+    renderCatalogPagination(totalProducts);
 
 
 
@@ -444,7 +486,7 @@ function renderCatalogProducts() {
     if (counter) {
 
         counter.textContent =
-            products.length;
+            totalProducts;
 
     }
 
@@ -463,7 +505,7 @@ function renderCatalogProducts() {
     if (emptyMessage) {
 
         emptyMessage.hidden =
-            products.length !== 0;
+            totalProducts !== 0;
 
     }
 }
@@ -471,7 +513,222 @@ function renderCatalogProducts() {
 
 
 // ======================================================
-// 7.2 ЧТЕНИЕ ПАРАМЕТРОВ ИЗ URL
+// 7.2 ПАГИНАЦИЯ И КНОПКА «ПОКАЗАТЬ ВСЕ»
+// ======================================================
+
+function renderCatalogPagination(totalProducts) {
+
+    const pagination =
+        document.querySelector('.catalog-bottom .pagination');
+
+    const viewAllButton =
+        document.querySelector('.catalog-view-all');
+
+    const bottom =
+        document.querySelector('.catalog-bottom');
+
+    const showPagination =
+        !catalogShowAll && catalogTotalPages > 1;
+
+    const showViewAll =
+        catalogShowAll || totalProducts > catalogPageSize;
+
+
+    if (pagination) {
+
+        pagination.style.display = showPagination ? '' : 'none';
+
+        if (showPagination) {
+
+            const parts = [];
+
+            // Стрелка «Назад»
+            parts.push(`
+                <button type="button"
+                        class="pagination__arrow"
+                        data-page="${catalogCurrentPage - 1}"
+                        aria-label="Предыдущая страница"
+                        ${catalogCurrentPage === 1 ? 'disabled' : ''}>
+                    ‹
+                </button>
+            `);
+
+            let previousPage = 0;
+
+            for (let page = 1; page <= catalogTotalPages; page++) {
+
+                // При большом количестве страниц показываем
+                // первую, последнюю и ближайшие к текущей
+                const isVisible =
+                    catalogTotalPages <= 7 ||
+                    page === 1 ||
+                    page === catalogTotalPages ||
+                    Math.abs(page - catalogCurrentPage) <= 1 ||
+                    (catalogCurrentPage <= 2 && page <= 4) ||
+                    (catalogCurrentPage >= catalogTotalPages - 1 &&
+                        page >= catalogTotalPages - 3);
+
+                if (!isVisible) {
+                    continue;
+                }
+
+                if (page - previousPage > 1) {
+                    parts.push('<span class="pagination__dots">...</span>');
+                }
+
+                const isActive = page === catalogCurrentPage;
+
+                parts.push(`
+                    <button type="button"
+                            class="pagination__page${isActive ? ' is-active' : ''}"
+                            data-page="${page}"
+                            ${isActive ? 'aria-current="page"' : ''}>
+                        ${page}
+                    </button>
+                `);
+
+                previousPage = page;
+
+            }
+
+            // Стрелка «Вперёд»
+            parts.push(`
+                <button type="button"
+                        class="pagination__arrow"
+                        data-page="${catalogCurrentPage + 1}"
+                        aria-label="Следующая страница"
+                        ${catalogCurrentPage === catalogTotalPages ? 'disabled' : ''}>
+                    ›
+                </button>
+            `);
+
+            pagination.innerHTML = parts.join('');
+
+        }
+
+    }
+
+    // Кнопка нужна, только если есть что дополнительно показать
+    if (viewAllButton) {
+
+        viewAllButton.style.display = showViewAll ? '' : 'none';
+        viewAllButton.textContent =
+            catalogShowAll ? 'Свернуть' : 'Показать все';
+
+    }
+
+    // Не оставляем пустое место, если кнопок нет
+    if (bottom) {
+        bottom.style.display =
+            showPagination || showViewAll ? '' : 'none';
+    }
+}
+
+
+function initCatalogPagination() {
+
+    const container =
+        document.querySelector('#catalog-products');
+
+    if (!container) {
+        return;
+    }
+
+    const showSelect =
+        document.querySelector('#catalog-show');
+
+    const pagination =
+        document.querySelector('.catalog-bottom .pagination');
+
+    const viewAllButton =
+        document.querySelector('.catalog-view-all');
+
+
+    // Выпадающий список 9 / 18 / 27
+    if (showSelect) {
+
+        const initialSize = Number(showSelect.value);
+
+        if ([9, 18, 27].includes(initialSize)) {
+            catalogPageSize = initialSize;
+        }
+
+        showSelect.addEventListener('change', () => {
+
+            const newSize = Number(showSelect.value);
+
+            if (![9, 18, 27].includes(newSize)) {
+                return;
+            }
+
+            catalogPageSize = newSize;
+            catalogCurrentPage = 1;
+            catalogShowAll = false;
+
+            renderCatalogProducts();
+
+        });
+
+    }
+
+
+    // Обработчик номеров страниц и стрелок
+    if (pagination) {
+
+        pagination.addEventListener('click', event => {
+
+            const button = event.target.closest('[data-page]');
+
+            if (!button || button.disabled) {
+                return;
+            }
+
+            const newPage = Number(button.dataset.page);
+
+            if (
+                catalogShowAll ||
+                newPage < 1 ||
+                newPage > catalogTotalPages ||
+                newPage === catalogCurrentPage
+            ) {
+                return;
+            }
+
+            catalogCurrentPage = newPage;
+            renderCatalogProducts();
+
+            // Возвращаемся к началу списка товаров
+            document.querySelector('.catalog-toolbar')
+                ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        });
+
+    }
+
+
+    // Показать все / Свернуть
+    if (viewAllButton) {
+
+        viewAllButton.addEventListener('click', () => {
+
+            catalogShowAll = !catalogShowAll;
+            catalogCurrentPage = 1;
+
+            renderCatalogProducts();
+
+            if (!catalogShowAll) {
+                document.querySelector('.catalog-toolbar')
+                    ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+        });
+
+    }
+}
+
+
+// ======================================================
+// 7.3 ЧТЕНИЕ ПАРАМЕТРОВ ИЗ URL
 // ======================================================
 
 function loadCatalogParameters() {
@@ -586,7 +843,7 @@ function loadCatalogParameters() {
 
 
 // ======================================================
-// 7.3 КНОПКИ "В КОРЗИНУ"
+// 7.4 КНОПКИ "В КОРЗИНУ"
 // ======================================================
 
 function initCartButtons() {
@@ -642,7 +899,7 @@ function initCartButtons() {
 
 
 // ======================================================
-// 7.4 ФИЛЬТР КАТЕГОРИЙ
+// 7.5 ФИЛЬТР КАТЕГОРИЙ
 // ======================================================
 
 function initCatalogFilters() {
@@ -689,6 +946,7 @@ function initCatalogFilters() {
             );
 
 
+            catalogCurrentPage = 1;
             renderCatalogProducts();
 
         }
@@ -698,7 +956,7 @@ function initCatalogFilters() {
 
 
 // ======================================================
-// 7.5 ПОИСК В КАТАЛОГЕ
+// 7.6 ПОИСК В КАТАЛОГЕ
 // ======================================================
 
 function initCatalogSearch() {
@@ -728,6 +986,7 @@ function initCatalogSearch() {
                 event.target.value.trim();
 
 
+            catalogCurrentPage = 1;
             renderCatalogProducts();
 
         }
@@ -737,9 +996,8 @@ function initCatalogSearch() {
 
 
 // ======================================================
-// 7.6 СОРТИРОВКА
+// 7.7 СОРТИРОВКА
 // ======================================================
-
 function initCatalogSort() {
 
     const select =
@@ -763,6 +1021,7 @@ function initCatalogSort() {
                 event.target.value;
 
 
+            catalogCurrentPage = 1;
             renderCatalogProducts();
 
         }
@@ -772,7 +1031,7 @@ function initCatalogSort() {
 
 
 // ======================================================
-// 7.7 ФИЛЬТР ПО МАКСИМАЛЬНОЙ ЦЕНЕ
+// 7.8 ФИЛЬТР ПО МАКСИМАЛЬНОЙ ЦЕНЕ
 // ======================================================
 
 function initCatalogPriceFilter() {
@@ -954,6 +1213,7 @@ function initCatalogPriceFilter() {
             // Обновляем каталог сразу,
             // пока пользователь двигает ползунок
 
+            catalogCurrentPage = 1;
             renderCatalogProducts();
 
         }
@@ -1003,6 +1263,11 @@ document.addEventListener(
         // уже была известна максимальная цена.
 
         initCatalogPriceFilter();
+
+
+        // Подключаем выбор 9 / 18 / 27 и пагинацию
+
+        initCatalogPagination();
 
 
         // После этого выводим товары

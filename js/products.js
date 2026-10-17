@@ -1,22 +1,23 @@
-const PRODUCTS = [
+function getImages(category, name, count)
+{
+    return Array.from({ length: count }, (_, i) =>
+        `img/products/${category}/${name}-${i + 1}.jpg`
+    );
+}
+
+// ==================== ФИГУРКИ ====================
+const FIGURES = [
     {
         id: 1,
         name: 'Kurumi Tokisaki',
         category: 'figures',
         categoryName: 'Фигурки',
         price: 3250,
-        images: [
-            'img/products/figures/kurumi-1.jpg',
-            'img/products/figures/kurumi-2.jpg',
-            'img/products/figures/kurumi-3.jpg',
-            'img/products/figures/kurumi-4.jpg',
-            'img/products/figures/kurumi-5.jpg',
-            'img/products/figures/kurumi-6.jpg',
-        ],
+        images: getImages('figures', 'kurumi', 6),
         height: "21 см",
         character: "Куруми Токисаки / Kurumi Tokisaki",
         source: "Рандеву с жизнью / Date A Live",
-        manufacturer: "Prime 1 Studio",
+        manufacturer: "Prime 1 Studio"
     },
 
     {
@@ -25,16 +26,7 @@ const PRODUCTS = [
         category: 'figures',
         categoryName: 'Фигурки',
         price: 6190,
-
-        images: [
-            'img/products/figures/reimu-1.jpg',
-            'img/products/figures/reimu-2.jpg',
-            'img/products/figures/reimu-3.jpg',
-            'img/products/figures/reimu-4.jpg',
-            'img/products/figures/reimu-5.jpg',
-            'img/products/figures/reimu-6.jpg',
-            'img/products/figures/reimu-7.jpg',
-        ],
+        images: getImages('figures', 'reimu', 7),
         height: "40 см",
         character: "Рейму Хакурей / Reimu Hakurei",
         source: "Touhou Project",
@@ -42,94 +34,12 @@ const PRODUCTS = [
     },
 
     {
-        id: 3,
-        name: 'Худи Alucard',
-        category: 'clothes',
-        categoryName: 'Одежда',
-        price: 12490,
-        images: [
-            'img/products/clothes/hoodie-alucard-1.jpg',
-            'img/products/clothes/hoodie-alucard-2.jpg',
-            'img/products/clothes/hoodie-alucard-3.jpg',
-            'img/products/clothes/hoodie-alucard-4.jpg'
-        ]
-    },
-
-    {
-        id: 4,
-        name: 'Футболка Chainsaw Man',
-        category: 'clothes',
-        categoryName: 'Одежда',
-        price: 3590,
-        images: [
-            'img/products/clothes/t-shirt-chainsawman-1.jpg',
-            'img/products/clothes/t-shirt-chainsawman-2.jpg',
-        ]
-    },
-
-    {
-        id: 5,
-        name: 'Манга Berserk. Том 1',
-        category: 'manga',
-        categoryName: 'Манга',
-        price: 1690,
-        images: [
-            'img/products/manga/manga-1.jpg'
-        ]
-    },
-
-    {
-        id: 6,
-        name: 'Рубашка King Of Curses',
-        category: 'clothes',
-        categoryName: 'Одежда',
-        price: 11990,
-        images: [
-            'img/products/clothes/shirt-kingofcurses-1.jpg',
-            'img/products/clothes/shirt-kingofcurses-2.jpg',
-        ]
-    },
-
-    {
-        id: 7,
-        name: 'Манга Naruto. Том 1',
-        category: 'manga',
-        categoryName: 'Манга',
-        price: 1290,
-        images: [
-            'img/products/manga/manga-2.jpg'
-        ]
-    },
-
-    {
-        id: 8,
-        name: 'Джинсы Mermaids',
-        category: 'clothes',
-        categoryName: 'Одежда',
-        price: 6925,
-        images: [
-            'img/products/clothes/jeans-mermaids-1.jpg',
-            'img/products/clothes/jeans-mermaids-2.jpg',
-        ]
-    },
-
-        <!-- ============================================================================== -->
-
-
-    {
         id: 9,
         name: 'Shelter Bloodfallen: Black Bunny',
         category: 'figures',
         categoryName: 'Фигурки',
         price: 35300,
-        images: [
-            'img/products/figures/shelter-bloodfallen-1.jpg',
-            'img/products/figures/shelter-bloodfallen-2.jpg',
-            'img/products/figures/shelter-bloodfallen-3.jpg',
-            'img/products/figures/shelter-bloodfallen-4.jpg',
-            'img/products/figures/shelter-bloodfallen-5.jpg',
-            'img/products/figures/shelter-bloodfallen-6.jpg'
-        ],
+        images: getImages('figures', 'shelter-bloodfallen', 6),
         height: "28 см",
         character: "Шаллтир Бладфоллен / Shalltear Bloodfallen",
         source: "Повелитель / Overlord",
@@ -142,16 +52,7 @@ const PRODUCTS = [
         category: 'figures',
         categoryName: 'Фигурки',
         price: 36200,
-        images: [
-            'img/products/figures/narberal-gamma-1.jpg',
-            'img/products/figures/narberal-gamma-2.jpg',
-            'img/products/figures/narberal-gamma-3.jpg',
-            'img/products/figures/narberal-gamma-4.jpg',
-            'img/products/figures/narberal-gamma-5.jpg',
-            'img/products/figures/narberal-gamma-6.jpg',
-            'img/products/figures/narberal-gamma-7.jpg',
-            'img/products/figures/narberal-gamma-8.jpg',
-        ],
+        images: getImages('figures', 'narberal-gamma', 8),
         height: "32 см",
         character: "Нарберал Гамма / Narberal Gamma",
         source: "Повелитель / Overlord",
@@ -164,18 +65,7 @@ const PRODUCTS = [
         category: 'figures',
         categoryName: 'Фигурки',
         price: 6950,
-        images: [
-            'img/products/figures/nanami-1.jpg',
-            'img/products/figures/nanami-2.jpg',
-            'img/products/figures/nanami-3.jpg',
-            'img/products/figures/nanami-4.jpg',
-            'img/products/figures/nanami-5.jpg',
-            'img/products/figures/nanami-6.jpg',
-            'img/products/figures/nanami-7.jpg',
-            'img/products/figures/nanami-8.jpg',
-            'img/products/figures/nanami-9.jpg',
-            'img/products/figures/nanami-10.jpg',
-        ],
+        images: getImages('figures', 'nanami', 10),
         height: "12 см",
         character: "Нанами / Nanami",
         source: "Виртуальный ютубер / Virtual YouTuber",
@@ -188,47 +78,11 @@ const PRODUCTS = [
         category: 'figures',
         categoryName: 'Фигурки',
         price: 176195,
-        images: [
-            'img/products/figures/albedo-1.jpg',
-            'img/products/figures/albedo-2.jpg',
-            'img/products/figures/albedo-3.jpg',
-            'img/products/figures/albedo-4.jpg',
-            'img/products/figures/albedo-5.jpg',
-            'img/products/figures/albedo-6.jpg',
-            'img/products/figures/albedo-7.jpg',
-            'img/products/figures/albedo-8.jpg',
-            'img/products/figures/albedo-9.jpg',
-        ],
+        images: getImages('figures', 'albedo-1', 9),
         height: "77 см",
         character: "Альбедо / Albedo",
         source: "Повелитель / Overlord",
         manufacturer: "Prime 1 Studio",
-    },
-
-    {
-        id: 13,
-        name: 'Худи Dark Naruto',
-        category: 'clothes',
-        categoryName: 'Одежда',
-        price: 13990,
-        images: [
-            'img/products/clothes/hoodie-darknaruto-1.jpg',
-            'img/products/clothes/hoodie-darknaruto-2.jpg',
-            'img/products/clothes/hoodie-darknaruto-3.jpg',
-            'img/products/clothes/hoodie-darknaruto-4.jpg',
-        ]
-    },
-
-    {
-        id: 14,
-        name: 'Топ Neo Tokyo Rider',
-        category: 'clothes',
-        categoryName: 'Одежда',
-        price: 3790,
-        images: [
-            'img/products/clothes/top-neotokyorider-1.jpg',
-            'img/products/clothes/top-neotokyorider-2.jpg',
-        ]
     },
 
     {
@@ -237,17 +91,7 @@ const PRODUCTS = [
         category: 'figures',
         categoryName: 'Фигурки',
         price: 2585,
-        images: [
-            'img/products/figures/miku-1.jpg',
-            'img/products/figures/miku-2.jpg',
-            'img/products/figures/miku-3.jpg',
-            'img/products/figures/miku-4.jpg',
-            'img/products/figures/miku-5.jpg',
-            'img/products/figures/miku-6.jpg',
-            'img/products/figures/miku-7.jpg',
-            'img/products/figures/miku-8.jpg',
-            'img/products/figures/miku-9.jpg',
-        ],
+        images: getImages('figures', 'miku', 9),
         height: "21 см",
         character: "Хацунэ Мику / Hatsune Miku",
         source: "Вокалоид / Vocaloid",
@@ -260,18 +104,7 @@ const PRODUCTS = [
         category: 'figures',
         categoryName: 'Фигурки',
         price: 148930,
-        images: [
-            'img/products/figures/asuka-1.jpg',
-            'img/products/figures/asuka-2.jpg',
-            'img/products/figures/asuka-3.jpg',
-            'img/products/figures/asuka-4.jpg',
-            'img/products/figures/asuka-5.jpg',
-            'img/products/figures/asuka-6.jpg',
-            'img/products/figures/asuka-7.jpg',
-            'img/products/figures/asuka-8.jpg',
-            'img/products/figures/asuka-9.jpg',
-            'img/products/figures/asuka-10.jpg',
-        ],
+        images: getImages('figures', 'asuka', 10),
         height: "98 см",
         character: "Аска Лэнгли Сорью / Asuka Langley Souryuu",
         source: "Евангелион / Evangelion",
@@ -284,21 +117,11 @@ const PRODUCTS = [
         category: 'figures',
         categoryName: 'Фигурки',
         price: 18875,
-        images: [
-            'img/products/figures/ruan-mei-1.jpg',
-            'img/products/figures/ruan-mei-2.jpg',
-            'img/products/figures/ruan-mei-3.jpg',
-            'img/products/figures/ruan-mei-4.jpg',
-            'img/products/figures/ruan-mei-5.jpg',
-            'img/products/figures/ruan-mei-6.jpg',
-            'img/products/figures/ruan-mei-7.jpg',
-            'img/products/figures/ruan-mei-8.jpg'
-        ],
+        images: getImages('figures', 'ruan-mei', 8),
         height: "17.7 см",
         character: "Ruan Mei",
         source: "Honkai: Star Rail",
         manufacturer: "Prime 1 Studio",
-
     },
 
     {
@@ -307,16 +130,7 @@ const PRODUCTS = [
         category: 'figures',
         categoryName: 'Фигурки',
         price: 2585,
-
-        images: [
-            'img/products/figures/marin-kitagawa-1.jpg',
-            'img/products/figures/marin-kitagawa-2.jpg',
-            'img/products/figures/marin-kitagawa-3.jpg',
-            'img/products/figures/marin-kitagawa-4.jpg',
-            'img/products/figures/marin-kitagawa-5.jpg',
-            'img/products/figures/marin-kitagawa-6.jpg',
-            'img/products/figures/marin-kitagawa-7.jpg'
-        ],
+        images: getImages('figures', 'marin-kitagawa', 7),
         height: "13 см",
         character: "Марин Китагава / Marin Kitagawa",
         source: "Эта фарфоровая кукла влюбилась / Sono Bisque Doll wa Koi wo Suru",
@@ -329,14 +143,7 @@ const PRODUCTS = [
         category: 'figures',
         categoryName: 'Фигурки',
         price: 2550,
-
-        images: [
-            'img/products/figures/rei-1.jpg',
-            'img/products/figures/rei-2.jpg',
-            'img/products/figures/rei-3.jpg',
-            'img/products/figures/rei-4.jpg',
-            'img/products/figures/rei-5.jpg',
-        ],
+        images: getImages('figures', 'rei', 5),
         height: "20 см",
         character: "Рей Аянами / Rei Ayanami",
         source: "Евангелион / Evangelion",
@@ -344,46 +151,218 @@ const PRODUCTS = [
     },
 
     {
-        id: 20,
+        id: 21,
         name: 'Nino Nakano',
         category: 'figures',
         categoryName: 'Фигурки',
         price: 2800,
-
-        images: [
-            'img/products/figures/nino-1.jpg',
-            'img/products/figures/nino-2.jpg',
-            'img/products/figures/nino-3.jpg',
-            'img/products/figures/nino-4.jpg',
-            'img/products/figures/nino-5.jpg',
-        ],
+        images: getImages('figures', 'nino', 5),
         height: "20 см",
         character: "Нино Накано / Nino Nakano",
         source: "Пять Невест / The Quintessential Quintuplets",
         manufacturer: "TAITO",
-
-        description: "Prime 1 Studio"
     },
 
+    {
+        id: 22,
+        name: 'Gojo Satoru',
+        category: 'figures',
+        categoryName: 'Фигурки',
+        price: 17560,
+        images: getImages('figures', 'gojo-satoru-1', 7),
+        height: "41 см",
+        character: "Сатору Годжо / Satoru Gojou",
+        source: "Магическая битва / Jujutsu Kaisen",
+        manufacturer: "Six Eyes Studio",
+    },
 
+    {
+        id: 23,
+        name: 'Kurosaki Ichigo: Hell Form',
+        category: 'figures',
+        categoryName: 'Фигурки',
+        price: 26850,
+        images: getImages('figures', 'kurosaki-ichigo', 7),
+        height: "37 см",
+        character: "Куросаки Ичиго / Kurosaki ichigo",
+        source: "Блич / Bleach",
+        manufacturer: "Mu Zi Studio",
+    },
 
+    {
+        id: 24,
+        name: 'Tsaritsa Anastasya',
+        category: 'figures',
+        categoryName: 'Фигурки',
+        price: 19300,
+        images: getImages('figures', 'tsaritsa-anastasya', 6),
+        height: "20 см",
+        character: "Царица / Tsaritsa",
+        source: "Геншин Импакт / Genshin Impact",
+        manufacturer: "MiYin Studio",
+    },
 
+    {
+        id: 25,
+        name: 'Gojo Satoru',
+        category: 'figures',
+        categoryName: 'Фигурки',
+        price: 13700,
+        images: getImages('figures', 'gojo-satoru-2', 5),
+        height: "23 см",
+        character: "Сатору Годжо / Satoru Gojou",
+        source: "Магическая битва / Jujutsu Kaisen",
+        manufacturer: "GO FIGURE Studio",
+    },
 
+    {
+        id: 30,
+        name: 'Louise',
+        category: 'figures',
+        categoryName: 'Фигурки',
+        price: 6650,
+        images: getImages('figures', 'louise', 6),
+        height: "22 см",
+        character: "Луиза / Louise",
+        source: "Подручный Луизы-Нулизы / Zero no Tsukaima",
+        manufacturer: "POP UP PARADE",
+    },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    {
+        id: 31,
+        name: 'Albedo: Hermes Trismegistus',
+        category: 'figures',
+        categoryName: 'Фигурки',
+        price: 31280,
+        images: getImages('figures', 'albedo-2', 8),
+        height: "31 см",
+        character: "Альбедо / Albedo",
+        source: "Повелитель / Overlord",
+        manufacturer: "DMM Factory",
+    },
 
 ];
+
+
+// ==================== ОДЕЖДА ====================
+const CLOTHES = [
+    {
+        id: 3,
+        name: 'Худи Alucard',
+        category: 'clothes',
+        categoryName: 'Одежда',
+        price: 12490,
+        images: getImages('clothes', 'hoodie-alucard', 4)
+    },
+
+    {
+        id: 4,
+        name: 'Футболка Chainsaw Man',
+        category: 'clothes',
+        categoryName: 'Одежда',
+        price: 3590,
+        images: getImages('clothes', 't-shirt-chainsawman', 2)
+    },
+
+    {
+        id: 6,
+        name: 'Рубашка King Of Curses',
+        category: 'clothes',
+        categoryName: 'Одежда',
+        price: 11990,
+        images: getImages('clothes', 'shirt-kingofcurses', 2)
+    },
+
+    {
+        id: 8,
+        name: 'Джинсы Mermaids',
+        category: 'clothes',
+        categoryName: 'Одежда',
+        price: 6925,
+        images: getImages('clothes', 'jeans-mermaids', 2)
+    },
+
+    {
+        id: 13,
+        name: 'Худи Dark Naruto',
+        category: 'clothes',
+        categoryName: 'Одежда',
+        price: 13990,
+        images: getImages('clothes', 'hoodie-darknaruto', 4)
+    },
+
+    {
+        id: 14,
+        name: 'Топ Neo Tokyo Rider',
+        category: 'clothes',
+        categoryName: 'Одежда',
+        price: 3790,
+        images: getImages('clothes', 'top-neotokyorider', 2)
+    },
+
+    {
+        id: 26,
+        name: 'Худи Satoru',
+        category: 'clothes',
+        categoryName: 'Одежда',
+        price: 13990,
+        images: getImages('clothes', 'hoodie-satoru', 4)
+    },
+
+    {
+        id: 27,
+        name: 'Лонгслив Malevolent Curse',
+        category: 'clothes',
+        categoryName: 'Одежда',
+        price: 8690,
+        images: getImages('clothes', 'longshliv-malevolent-curse', 2)
+    },
+
+    {
+        id: 28,
+        name: 'Джинсы Ascendance',
+        category: 'clothes',
+        categoryName: 'Одежда',
+        price: 6925,
+        images: getImages('clothes', 'jeans-ascendance', 2)
+    },
+
+    {
+        id: 29,
+        name: 'Футболка Quiet Possession',
+        category: 'clothes',
+        categoryName: 'Одежда',
+        price: 4490,
+        images: getImages('clothes', 't-shirt-quiet-possession', 4)
+    },
+
+];
+
+// ==================== МАНГА ====================
+const MANGA = [
+    {
+        id: 5,
+        name: 'Манга Berserk. Том 1',
+        category: 'manga',
+        categoryName: 'Манга',
+        price: 1690,
+        images: ['img/products/manga/manga-1.jpg']
+    },
+
+    {
+        id: 7,
+        name: 'Манга Naruto. Том 1',
+        category: 'manga',
+        categoryName: 'Манга',
+        price: 1290,
+        images: ['img/products/manga/manga-2.jpg']
+    },
+];
+
+
+// ==================== ВСЕ ТОВАРЫ ====================
+const PRODUCTS = [
+    ...FIGURES,
+    ...CLOTHES,
+    ...MANGA
+].sort((a, b) => a.id - b.id);
